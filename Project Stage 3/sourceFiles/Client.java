@@ -5,7 +5,7 @@ public class Client {
     private String Name;
     private String phoneNumber;
     private String email;
-    private ArrayList<Car> CarList;
+    private ArrayList<Car> CarList = new ArrayList<Car>();
 
 
     public Client(){
@@ -13,7 +13,7 @@ public class Client {
         this.Name = null;
         this.phoneNumber = null;
         this.email = null;
-        this.CarList = null;
+        this.CarList = new ArrayList<Car>();
 
     }
 
@@ -79,7 +79,11 @@ public class Client {
     }
 
     public void printCarList(){
-        ;
+        for(int i = 0; i < CarList.size();i++){
+
+            System.out.print(CarList.get(i).getCarYear() + " " + CarList.get(i).getCarMake() + " " + CarList.get(i).getCarType());
+            System.out.println("");
+        }
     }
 
 

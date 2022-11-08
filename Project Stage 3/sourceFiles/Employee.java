@@ -54,6 +54,7 @@ public class Employee {
   public void setWeeklySalary(double WeeklySalary) {
     this.WeeklySalary = WeeklySalary;
   }
+  public double getWeeklySalary(){return WeeklySalary;}
 
   public void setOThrs(int OThrs) {
     this.OThrs = OThrs;

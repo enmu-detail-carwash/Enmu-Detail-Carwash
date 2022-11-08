@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Appointment {
+public class Appointment extends SpecialClient {
 
     private Service service;
     private Client client;
@@ -77,9 +77,11 @@ public class Appointment {
 
         System.out.println(client.getName() + "'s appointment on " + Month + "/" + day + "/" + Year + " at " +hours+":"+minutes);
         System.out.println("Client: " + client.getName());
+        System.out.println("Vehicles: ");
+        client.printCarList();
         //Need to add lines to pint the service name, price, and description
-        //Need to add employee assigned to the appointment
-        //Need to add lines to print the list of cars.
+        System.out.println("Assigned Employee: " + employee.getName());
+
 
 
 
