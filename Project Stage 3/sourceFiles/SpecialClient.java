@@ -8,6 +8,7 @@ public class SpecialClient extends Client{
 
    //Still need to make constructors
     public SpecialClient(){
+        super(null,null,null,null);
         this.discountAmount = 0;
         this.memberTier = null;
     }
@@ -37,6 +38,6 @@ public class SpecialClient extends Client{
         System.out.println(super.getEmail());
         System.out.println(super.getPhoneNumber());
         System.out.println(discountAmount);
-        System.out.println(memberTier);
+        System.out.println(memberTier + " tier member.");
     }
 }
