@@ -15,14 +15,14 @@ public class Employee {
   public Employee(int ID, int Age, String name) {
     this.ID = ID;
     this.Age = Age;
-    this.name = name;
+    this.Name = name;
 
   }
 
   public Employee(int ID, int Age, String name, double WeeklySalary) {
     this.ID = ID;
     this.Age = Age;
-    this.name = name;
+    this.Name = name;
     this.WeeklySalary = WeeklySalary;
 
   }
@@ -32,7 +32,7 @@ public class Employee {
   }
 
   public void setName(String name) {
-    this.Name() = Name;
+    this.Name = Name;
   }
 
   public int getAge() {
@@ -63,15 +63,17 @@ public class Employee {
     return OThrs;
   }
 
-  public int getOTpay() {
-    return OTpay;
+  public double getOTpay() {
+    return OTrate * OThrs;
   }
 
   public double getTotalPay() {
-    return TotalPay
+    return WeeklySalary + getOTpay();
   }
 
   public void paid() {
+
+    this.PayStatus = true;
 
   }
 
