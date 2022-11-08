@@ -7,6 +7,7 @@ public class Client {
     private String email;
     private ArrayList<Car> CarList;
 
+
     public Client(){
 
         this.Name = null;
@@ -72,6 +73,16 @@ public class Client {
     public Car getCar(){
         return null;
     }
+
+    public String getMemberTier(){
+        return "None";
+    }
+
+    public void printCarList(){
+        ;
+    }
+
+
 
 
 
