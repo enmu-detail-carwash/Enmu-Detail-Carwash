@@ -184,17 +184,6 @@ public class Management {
         String newEmail = input.nextLine();
 
 
-
-//        System.out.print("Do you want to add a car? (y/n) ");
-
-//        char addOrRemove = input.next().charAt(0);
-//        if(addOrRemove == 'y'){
-//
-//        }
-
-
-
-
         clients.remove(nameInput);
         clients.put(newNameInput,new Client(newNameInput,newPhone,newEmail));
 
@@ -239,7 +228,7 @@ public class Management {
 
         System.out.print("To print a Service's information, enter the name of the service: ");
         String nameInput = input.nextLine();
-        input.reset();
+
         System.out.println("Name: " + services.get(nameInput).getServiceName());
         System.out.println("Description: ");
         System.out.println(services.get(nameInput).getDescription());
@@ -310,16 +299,208 @@ public class Management {
         System.out.print("Enter the service that will be done: ");
         String serviceInput = input.nextLine();
         input.reset();
-        System.out.println("Enter the employee that will be assigned to the appointment: ");
+        System.out.print("Enter the employee that will be assigned to the appointment: ");
         String empInput = input.nextLine();
 
-        Appointments.put(clientInput, new Appointment(services.get(serviceInput),clients.get(clientInput),employees.get(empInput),timeInput,dateInput));
+
+        Appointments.put(dateInput + clientInput, new Appointment(services.get(serviceInput),clients.get(clientInput),employees.get(empInput),timeInput,dateInput));
     }
 
     public void deleteAppointment(){
+        input.nextLine();
+
+        System.out.print("Enter the name of the client, who's appointment you want to delete: ");
+        String clientInput = input.nextLine();
+        input.reset();
+        System.out.print("Enter the date of the appointment you want to delete (mm/dd/yyyy): ");
+        String dateInput = input.nextLine();
+
+
+        Appointments.remove(dateInput + clientInput);
+
+    }
+
+    public void printAppointment(){
+        input.nextLine();
+
+        System.out.print("Enter the name of the client, who's appointment you want to print: ");
+        String clientInput = input.nextLine();
+        input.reset();
+        System.out.print("To print an appointment's info print the date of the appointment (mm/dd/yyyy): ");
+        String dateInput = input.nextLine();
+
+
+        Appointments.get(dateInput + clientInput).displayAppInfo();
+    }
+
+    private void printAppointment(Appointment a){
+
+        a.displayAppInfo();
+
+    }
+
+    public void modifyAppointment(){
+        input.nextLine();
+
+        System.out.print("Enter the client's name of the appointment you want to change: ");
+        String clientInput = input.nextLine();
+        input.reset();
+        System.out.print("Enter the date of the appointment you want to change: ");
+        String dateInput = input.nextLine();
+        input.reset();
+
+        System.out.print("Changed Client: ");
+        String newClientInput = input.nextLine();
+        input.reset();
+        System.out.print("Changed date: ");
+        String newDateInput = input.nextLine();
+        input.reset();
+        System.out.print("Changed time: ");
+        String newTimeInput = input.nextLine();
+        input.reset();
+        System.out.print("Changed service: ");
+        String newServiceInput = input.nextLine();
+        input.reset();
+        System.out.print("Changed assigned employee: ");
+        String newEmployeeInput = input.nextLine();
+
+        Appointments.remove(dateInput + clientInput);
+        Appointments.put(newDateInput+newClientInput,(new Appointment(services.get(newServiceInput),clients.get(newClientInput),employees.get(newEmployeeInput),newTimeInput,newDateInput)));
+
+        System.out.println("<><><><><><><><><><><><<><><>");
+        System.out.println("");
+        printAppointment(Appointments.get(newDateInput + newClientInput));
+
+    }
+
+    public void printListEmployees(){
+        System.out.println("|Name:       |ID:       |Age:       |Salary:       |");
+        for(String key: employees.keySet()){
+
+
+            System.out.println("|" + employees.get(key).getName() +"|" + employees.get(key).getID() +"|" +
+                    employees.get(key).getAge() + "|" + employees.get(key).getWeeklySalary());
+
+        }
+    }
+    public void printListClients(){
+        System.out.println("|Name:       |Phone Number:       |Email:       |");
+        System.out.println("|Cars:       |");
+        for(String key: clients.keySet()){
+            System.out.println("|" + clients.get(key).getName()+"|"+clients.get(key).getPhoneNumber()+"|"+
+                    clients.get(key).getEmail());
+            System.out.print("|");
+            clients.get(key).printCarList();
+            System.out.println("|");
+        }
+    }
+    public void printListService(){
+        System.out.println("|Name:       |");
+        System.out.println("|Description:       |");
+        System.out.println("|Price:       |");
+        for(String key: services.keySet()){
+            System.out.println("");
+            System.out.println("|"+services.get(key).getServiceName() +"|");
+            System.out.println("");
+            System.out.println("|" + services.get(key).getDescription()+"|");
+            System.out.println("");
+            System.out.printf("|$%.2f",services.get(key).getPrice());
+            System.out.println("");
+        }
+    }
+    public void printListAppointments(){
+        System.out.println("|Date:       |Time:        |Client:       |Service:       |");
+        for(String key: Appointments.keySet()){
+
+            System.out.println("|" +Appointments.get(key).getAppDate() + "|" + Appointments.get(key).getAppTime() + "|"
+                    + Appointments.get(key).getClient().getName() + "|" + Appointments.get(key).getService().getServiceName() + "|");
+
+        }
+    }
+    public void addClientCar(){
+
+        System.out.print("To add assign a to a client, enter their name: ");
+        String clientInput = input.nextLine();
+        input.reset();
+        System.out.print("Enter the type of car: ");
+        String typeInput = input.nextLine();
+        input.reset();
+        System.out.print("Enter the car's make: ");
+        String makeInput = input.nextLine();
+        input.reset();
+        System.out.print("Enter the car's model");
+        String modelInput = input.nextLine();
+        input.reset();
+        System.out.print("Enter the year model of the car: ");
+        String yearInput = input.nextLine();
+        input.reset();
+        System.out.print("Enter the color of the car: ");
+        String colorInput = input.nextLine();
+        input.reset();
+        System.out.print("Enter the license plate of the car: ");
+        String licenseInput = input.nextLine();
+        input.reset();
+
+        clients.get(clientInput).addCar(new Car(colorInput,licenseInput,typeInput,yearInput,modelInput,makeInput));
+    }
+    public void deleteClientCar(){
+
+        System.out.print("To delete a client's car, enter the client's name: ");
+        String clientInput = input.nextLine();
+        input.reset();
+        System.out.print("License Plate: ");
+        String licenseInput = input.nextLine();
+        input.reset();
+        for(int i = 0; i<clients.get(clientInput).getCarList().size();i++){
+            if(clients.get(clientInput).getCarList().get(i).getCarLicensePlateNum() == licenseInput){
+                clients.get(clientInput).getCarList().remove(i);
+            }
+        }
 
 
     }
+
+    public void modifyClientCar(){
+
+        System.out.print("To modify a client's car, enter the client's name: ");
+        String clientInput = input.nextLine();
+        input.reset();
+        System.out.print("Enter the license plate of the car you want to modify: ");
+        String licenseInput = input.nextLine();
+        input.reset();
+        System.out.print("Changed Type: ");
+        String typeInput = input.nextLine();
+        input.reset();
+        System.out.print("Changed Make: ");
+        String makeInput = input.nextLine();
+        input.reset();
+        System.out.print("Changed Model: ");
+        String modelInput = input.nextLine();
+        input.reset();
+        System.out.print("Change Year: ");
+        String yearInput = input.nextLine();
+        input.reset();
+        System.out.print("Change Color: ");
+        String colorInput = input.nextLine();
+        input.reset();
+        System.out.print("Change License Plate: ");
+        String newLicensePlate = input.nextLine();
+        input.reset();
+
+        for(int i = 0; i<clients.get(clientInput).getCarList().size();i++){
+            if(clients.get(clientInput).getCarList().get(i).getCarLicensePlateNum() == licenseInput){
+                clients.get(clientInput).getCarList().get(i).setCarColor(colorInput);
+                clients.get(clientInput).getCarList().get(i).setCarMake(makeInput);
+                clients.get(clientInput).getCarList().get(i).setCarModel(modelInput);
+                clients.get(clientInput).getCarList().get(i).setCarType(typeInput);
+                clients.get(clientInput).getCarList().get(i).setCarYear(yearInput);
+                clients.get(clientInput).getCarList().get(i).setCarLicensePlateNum(newLicensePlate);
+            }
+        }
+
+    }
+
+
 
 
 

@@ -39,22 +39,25 @@ public class Main {
 //        a1.displayAppInfo();
 //
 //        System.out.println(Wash.totalMade());
-
-        m.createEmployee();
-        m.modifyEmployee();
-        m.printEmployeeInfo();
-        m.createClient();
-        m.modifyClient();
-        m.printClientInfo();
-        m.createService();
-        m.modifyService();
-        m.printServiceInfo();
+//        m.createService();
+//        m.createClient();
+//        m.createEmployee();
+//        m.createAppointment();
+//        m.printListAppointments();
 
 
-
-
-
-
+//        m.createEmployee();
+//        m.modifyEmployee();
+//        m.printEmployeeInfo();
+//        m.createClient();
+//        m.modifyClient();
+//        m.printClientInfo();
+//        m.createService();
+//        m.modifyService();
+//        m.printServiceInfo();
+//
+        menu menu = new menu();
+        menu.mainMenu();
 
 
     }
