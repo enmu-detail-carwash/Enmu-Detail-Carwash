@@ -56,8 +56,18 @@ public class Main {
 //        m.modifyService();
 //        m.printServiceInfo();
 //
-        menu menu = new menu();
-        menu.mainMenu();
+//        menu menu = new menu();
+//        menu.mainMenu();
+        m.createClient();
+        m.addClientCar();
+
+        m.printListClients();
+
+
+
+
+
+
 
 
     }

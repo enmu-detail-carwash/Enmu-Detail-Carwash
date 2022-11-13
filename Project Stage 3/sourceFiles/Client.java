@@ -1,3 +1,4 @@
+import java.lang.reflect.Member;
 import java.util.ArrayList;
 
 public class Client {
@@ -70,12 +71,12 @@ public class Client {
         CarList.add(car);
     }
 
-    public Car getCar(){
-        return null;
-    }
-
     public String getMemberTier(){
         return "None";
+    }
+
+    public double getDiscountAmount(){
+        return 0;
     }
 
     public void printCarList(){

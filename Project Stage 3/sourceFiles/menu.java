@@ -9,8 +9,9 @@ public class menu {
     public void mainMenu(){
         System.out.println("---------------------------------------------");
         System.out.println("ENMU Carwash Management System");
+        System.out.println("---------------------------------------------");
         System.out.println("");
-        System.out.println("");
+        System.out.println("Main Menu");
         System.out.println("1: Appointments");
         System.out.println("2: Clients");
         System.out.println("3: Employees");
@@ -52,7 +53,6 @@ public class menu {
         System.out.println("");
         System.out.println("---------------------------------------------");
         System.out.println("Appointments");
-        System.out.println("");
         System.out.println("");
         System.out.println("You have selected the option 'Appointments'.");
         System.out.println("");
@@ -145,18 +145,18 @@ public class menu {
         System.out.println("---------------------------------------------");
         System.out.println("Clients");
         System.out.println("");
-        System.out.println("");
         System.out.println("You have selected the option 'Clients'.");
         System.out.println("");
         System.out.println("1: Create Client");
         System.out.println("2: Delete Client");
         System.out.println("3: Modify Client");
-        System.out.println("4: Add Client's Cars");
-        System.out.println("5: Remove Client's Cars");
-        System.out.println("6: Modify Client's Cars");
-        System.out.println("7: View Client Info");
-        System.out.println("8: View List of Clients");
-        System.out.println("9: Return to the Main Menu");
+        System.out.println("4: Change Client's Membership tier");
+        System.out.println("5: Add Client's Cars");
+        System.out.println("6: Remove Client's Cars");
+        System.out.println("7: Modify Client's Cars");
+        System.out.println("8: View Client Info");
+        System.out.println("9: View List of Clients");
+        System.out.println("10: Return to the Main Menu");
         System.out.println("");
 
         System.out.print("To select an option, enter the corresponding number: ");
@@ -183,6 +183,12 @@ public class menu {
                 break;
             case 9: option2_9();
                 break;
+            case 10:option2_10();
+                break;
+            default:
+                System.out.println("You entered an invalid option.");
+                System.out.println("Please try again.");
+                option2();
 
         }
 
@@ -219,7 +225,7 @@ public class menu {
         System.out.println("---------------------------------------------");
         System.out.println("");
 
-        m.addClientCar();
+        m.modifyClient();
         option2();
     }
     public void option2_5(){
@@ -227,7 +233,7 @@ public class menu {
         System.out.println("---------------------------------------------");
         System.out.println("");
 
-        m.deleteClientCar();
+        m.addClientCar();
         option2();
     }
     public void option2_6(){
@@ -235,7 +241,7 @@ public class menu {
         System.out.println("---------------------------------------------");
         System.out.println("");
 
-        m.modifyClientCar();
+        m.deleteClientCar();
         option2();
     }
     public void option2_7(){
@@ -243,10 +249,18 @@ public class menu {
         System.out.println("---------------------------------------------");
         System.out.println("");
 
-        m.printClientInfo();
+        m.modifyClientCar();
         option2();
     }
     public void option2_8(){
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.printClientInfo();
+        option2();
+    }
+    public void option2_9(){
         System.out.println("");
         System.out.println("---------------------------------------------");
         System.out.println("");
@@ -255,10 +269,8 @@ public class menu {
 
         option2();
     }
-    public void option2_9(){
-        System.out.println("");
-        System.out.println("---------------------------------------------");
-        System.out.println("");
+    public void option2_10(){
+
 
 
         mainMenu();
@@ -270,7 +282,6 @@ public class menu {
         System.out.println("");
         System.out.println("---------------------------------------------");
         System.out.println("Employees");
-        System.out.println("");
         System.out.println("");
         System.out.println("You have selected the option 'Employees'.");
         System.out.println("");
@@ -305,6 +316,10 @@ public class menu {
                 break;
             case 6:
                 option3_6();
+            default:
+                System.out.println("You entered an invalid option.");
+                System.out.println("Please try again.");
+                option3();
         }
     }
         public void option3_1(){
@@ -360,15 +375,19 @@ public class menu {
             System.out.println("---------------------------------------------");
             System.out.println("Services");
             System.out.println("");
-            System.out.println("");
             System.out.println("You have selected the option 'Services'.");
             System.out.println("");
             System.out.println("1: Create Service");
             System.out.println("2: Delete Service");
             System.out.println("3: Modify Service");
-            System.out.println("4: View Service Info");
-            System.out.println("5: View List of Services");
-            System.out.println("6: Return to the Main Menu");
+            System.out.println("4: Create Member Tier");
+            System.out.println("5: Delete Member Tier");
+            System.out.println("6: Modify Member Tier");
+            System.out.println("7: View Service Info");
+            System.out.println("8: View List of Services");
+            System.out.println("9: View Member Tier Info");
+            System.out.println("10: List of Member Tiers");
+            System.out.println("11: Return to the Main Menu");
             System.out.println("");
 
             System.out.print("To select an option, enter the corresponding number: ");
@@ -392,6 +411,27 @@ public class menu {
                     break;
                 case 6:
                     option4_6();
+                    break;
+                case 7:
+                    option4_7();
+                    break;
+                case 8:
+                    option4_8();
+                    break;
+                case 9:
+                    option4_9();
+                    break;
+                case 10:
+                    option4_10();
+                    break;
+                case 11:
+                    option4_11();
+                    break;
+                default:
+                    System.out.println("You entered an invalid option.");
+                    System.out.println("Please try again.");
+                    option4();
+
             }
 
         }
@@ -422,8 +462,33 @@ public class menu {
         m.modifyService();
         option4();
     }
-
     public void option4_4(){
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.createMembership();
+        option4();
+    }
+    public void option4_5(){
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.deleteMembership();
+        option4();
+    }
+    public void option4_6(){
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.modifyMembership();
+        option4();
+
+    }
+
+    public void option4_7(){
         System.out.println("");
         System.out.println("---------------------------------------------");
         System.out.println("");
@@ -432,7 +497,7 @@ public class menu {
         option4();
     }
 
-    public void option4_5(){
+    public void option4_8(){
         System.out.println("");
         System.out.println("---------------------------------------------");
         System.out.println("");
@@ -441,9 +506,28 @@ public class menu {
         option4();
     }
 
-    public void option4_6() {
+    public void option4_9() {
+
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.printMember();
+        option4();
+    }
+    public void option4_10(){
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.printListMember();
+        option4();
+    }
+    public void option4_11(){
+
 
         mainMenu();
+
     }
 
     public void option5(){
@@ -451,24 +535,79 @@ public class menu {
         System.out.println("---------------------------------------------");
         System.out.println("Sales");
         System.out.println("");
-        System.out.println("");
         System.out.println("You have selected the option 'Sales'.");
         System.out.println("");
         System.out.println("1: Create Sale");
         System.out.println("2: Delete Sale");
-        System.out.println("3: Modify Sale");
-        System.out.println("4: View Sales Info");
-        System.out.println("5: View List of Sales");
-        System.out.println("6: Return to the Main Menu");
+        System.out.println("3: View Service Sales");
+        System.out.println("4: View List of Sales");
+        System.out.println("5: Return to the Main Menu");
         System.out.println("");
 
         System.out.print("To select an option, enter the corresponding number: ");
         int userInput = input.nextInt();
         input.reset();
 
+        switch (userInput) {
+            case 1:
+                option5_1();
+                break;
+            case 2:
+                option5_2();
+                break;
+            case 3:
+                option5_3();
+                break;
+            case 4:
+                option5_4();
+                break;
+            case 5:
+                option5_5();
+                break;
+            default:
+                System.out.println("You entered an invalid option.");
+                System.out.println("Please try again.");
+                option3();
+        }
+
 
     }
 
+    public void option5_1(){
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.createSale();
+        option5();
+    }
+    public void option5_2(){
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.deleteSale();
+        option5();
+    }
+    public void option5_3(){
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.printServiceSales();
+        option5();
+    }
+    public void option5_4(){
+        System.out.println("");
+        System.out.println("---------------------------------------------");
+        System.out.println("");
+
+        m.printAllSales();
+        option5();
+    }
+    public void option5_5(){
+        mainMenu();
+    }
 
 
 

@@ -3,6 +3,11 @@ public class Membership{
     private double discount;
     private String tierName;
 
+    public Membership(String name, double discount){
+        this.discount = discount/100;
+        this.tierName = name;
+    }
+
     public void setDiscount(double discount) {
         this.discount = discount;
     }

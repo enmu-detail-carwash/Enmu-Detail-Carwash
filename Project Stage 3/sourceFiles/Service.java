@@ -45,8 +45,8 @@ public class Service {
         this.description = description;
     }
 
-    public void addSale(){
-        amountSold++;
+    public void addSale(int i){
+        amountSold = amountSold + i;
     }
 
     public int getAmountSold(){
