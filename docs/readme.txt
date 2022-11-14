@@ -5,7 +5,6 @@ Compile and Run instructions.
 
 - Download the zip folder.
 - You will need to unzip the files
-- You will just open the code via notepad ++
 - Save the Java program
 - Save by using the project name, ENMU-Detail-Carwash / to what location you want.
 - Followed by .java extension you will run / compile the Main Menu.
