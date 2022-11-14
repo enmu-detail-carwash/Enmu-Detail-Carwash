@@ -46,7 +46,7 @@ public class Sale {
     }
 
     public double getTotalSaleAmount() {
-        return TotalSaleAmount;
+        return TotalSaleAmount - (TotalSaleAmount * discount);
     }
 
     public void setTotalSaleAmount(double saleAmount) {

@@ -31,6 +31,23 @@ public class Management {
         this.sales = new TreeMap<String,Sale>();
 
     }
+    public void createDummyInfo(){
+        clients.put("John Doe",new Client("John Doe","5751234567","johndoe123@gmail.com"));
+        clients.put("Mary Johnson", new Client("Mary Johnson","5752345678","maryjohnson1232gmail.com"));
+        clients.get("John Doe").addCar(new Car("Red","ENMU123","Coupe","2016","Challenger","Dodge"));
+        clients.get("Mary Johnson").addCar(new Car("Silver","ENMU234","Sedan","2015","Sonata","Honda"));
+        services.put("Exterior Wash",new Service("Exterior Wash",50,"The Exterior wash cleans the outside of the vehicle."));
+        services.put("Interior Clean",new Service("Interior Clean",100,"The Interior Clean makes the interior of the car spotless."));
+        memberships.put("Bronze",new Membership("Bronze",5));
+        memberships.put("Silver",new Membership("Silver",10));
+        memberships.put("Gold",new Membership("Gold",15));
+        employees.put("Joe Garcia",new Employee(1,33,"Joe Garcia",500));
+        Appointments.put("12/22/2022John Doe",new Appointment(services.get("Exterior Wash"),clients.get("John Doe"),employees.get("Joe Garcia"),"2:00 PM","12/22/2022"));
+        Appointments.put("12/23/2022Mary Johnson",new Appointment(services.get("Interior Clean"),clients.get("Mary Johnson"),employees.get("Joe Garcia"),"3:00 PM","12/23/2022"));
+        sales.put("John Doe1",new Sale(clients.get("John Doe").getName(),services.get("Exterior Wash").getServiceName(),services.get("Exterior Wash").getPrice(),1,clients.get("John Doe").getDiscountAmount(),"1"));
+        sales.put("Mary Johnson2",new Sale(clients.get("Mary Johnson").getName(),services.get("Interior Clean").getServiceName(),services.get("Interior Clean").getPrice(),1,clients.get("Mary Johnson").getDiscountAmount(),"2"));
+
+    }
 
     public void createMembership(){
 
@@ -38,7 +55,7 @@ public class Management {
         System.out.print("Enter the name of the new membership tier: ");
         String memberName = input.nextLine();
         input.reset();
-        System.out.println("Enter the discount this membership will apply: ");
+        System.out.print("Enter the discount this membership will apply: ");
         double discountAmountInput = input.nextDouble();
         input.reset();
 
@@ -47,8 +64,8 @@ public class Management {
     }
 
     public void deleteMembership(){
-
-        System.out.println("Enter the name of the membership tier you want to delete: ");
+        printListMember();
+        System.out.print("Enter the name of the membership tier you want to delete: ");
         String name = input.nextLine();
         input.reset();
 
@@ -57,14 +74,15 @@ public class Management {
     }
 
     public void modifyMembership(){
-
-        System.out.println("Enter the name of the membership tier you want to modify: ");
+        printListMember();
+        System.out.print("Enter the name of the membership tier you want to modify: ");
         String name = input.nextLine();
+        input.reset();
         System.out.println("Membership "+ name);
-        System.out.println("Changed name: ");
+        System.out.print("Changed name: ");
         String newName = input.nextLine();
         input.reset();
-        System.out.println("Changed discount amount: ");
+        System.out.print("Changed discount amount: ");
         double discount = input.nextDouble();
         input.reset();
 
@@ -75,7 +93,7 @@ public class Management {
 
     public void printMember(){
 
-        System.out.println("Enter the member tier you want to view: ");
+        System.out.print("Enter the member tier you want to view: ");
         String name = input.nextLine();
         input.reset();
         System.out.println("");
@@ -84,11 +102,11 @@ public class Management {
         input.nextLine();
     }
     public void printListMember(){
-        System.out.println("");
-        System.out.println("---------------------------------------------");
         for(String key: memberships.keySet()){
             System.out.println("Member Tier: " + key);
+            System.out.println("----------------");
             System.out.println("Description: The member tier " + key +" applies a discount of " +(memberships.get(key).getDiscount()*100) + "%.");
+            System.out.println("------------------------------");
         }
     }
 
@@ -118,7 +136,8 @@ public class Management {
 
     public void deleteEmployee(){
 
-        System.out.println("Enter the name of the employee you want to delete: ");
+        printListEmployees();
+        System.out.print("Enter the name of the employee you want to delete: ");
         String nameinput = input.nextLine();
         input.reset();
 
@@ -152,13 +171,13 @@ public class Management {
 
     public void modifyEmployee() {
 
-
-        System.out.println("Enter the name of the employee you want to modify: ");
+        printListEmployees();
+        System.out.print("Enter the name of the employee you want to modify: ");
         String nameinput = input.nextLine();
         input.reset();
 
         System.out.println("Employee " + employees.get(nameinput).getName());
-        System.out.println("Changed Name: ");
+        System.out.print("Changed Name: ");
         String newNameInput = input.nextLine();
         input.reset();
         System.out.print("Changed Age: ");
@@ -188,9 +207,6 @@ public class Management {
         System.out.print("Enter the new client's email: ");
         String emailInput = input.nextLine();
         input.reset();
-        System.out.print("Do you want to assign a membership level? (Y/N)");
-        Character query = input.next().charAt(0);
-        input.reset();
 
         clients.put(nameInput, new Client(nameInput,pnInput,emailInput));
         input.nextLine();
@@ -198,7 +214,7 @@ public class Management {
 
     public void deleteClient(){
 
-
+        printListClients();
         System.out.print("Enter the name of the client you want to delete: ");
         String nameInput = input.next();
         input.reset();
@@ -219,6 +235,7 @@ public class Management {
         System.out.println("Name: " + clients.get(nameInput).getName());
         System.out.println("Phone Number: " + clients.get(nameInput).getPhoneNumber());
         System.out.println("Email: " + clients.get(nameInput).getEmail());
+        System.out.println("Membership: " + clients.get(nameInput).getMemberTier());
         System.out.println("Cars: ");
         clients.get(nameInput).printCarList();
         input.nextLine();
@@ -230,6 +247,7 @@ public class Management {
         System.out.println("Name: " + c.getName());
         System.out.println("Phone Number: " + c.getPhoneNumber());
         System.out.println("Email: " + c.getEmail());
+        System.out.println("Membership: " + clients.get(c).getMemberTier());
         System.out.println("Cars: ");
         c.printCarList();
 
@@ -238,7 +256,7 @@ public class Management {
 
     public void modifyClient(){
 
-
+        printListClients();
         System.out.print("Enter the name of the client you want to modify: ");
         String nameInput = input.nextLine();
         input.reset();
@@ -260,6 +278,8 @@ public class Management {
 
     }
     public void AssignMembership(){
+        printListClients();
+        printListMember();
         System.out.print("To change a client's membership tier enter the their name: ");
         String clientInput = input.nextLine();
         input.reset();
@@ -295,7 +315,7 @@ public class Management {
 
     public void deleteService(){
 
-
+        printListService();
         System.out.print("Enter the name of the service you want to delete: ");
         String nameInput = input.nextLine();
         input.reset();
@@ -334,7 +354,7 @@ public class Management {
 
     public void modifyService(){
 
-
+        printListService();
         System.out.print("Enter the name of the service you want to modify: ");
         String nameInput = input.nextLine();
         input.reset();
@@ -386,7 +406,7 @@ public class Management {
 
     public void deleteAppointment(){
 
-
+        printListAppointments();
         System.out.print("Enter the name of the client, who's appointment you want to delete: ");
         String clientInput = input.nextLine();
         input.reset();
@@ -422,7 +442,7 @@ public class Management {
 
     public void modifyAppointment(){
 
-
+        printListAppointments();
         System.out.print("Enter the client's name of the appointment you want to change: ");
         String clientInput = input.nextLine();
         input.reset();
@@ -453,23 +473,22 @@ public class Management {
     }
 
     public void printListEmployees(){
-        System.out.println("|Name:       |ID:       |Age:       |Salary:       |");
+        System.out.printf("|%20s|%20s|%20s|%20s|","Name:","ID:","Age:","Salary:");
+        System.out.println("");
         for(String key: employees.keySet()){
-
-
-            System.out.println("|" + employees.get(key).getName() +"|" + employees.get(key).getID() +"|" +
-                    employees.get(key).getAge() + "|" + employees.get(key).getWeeklySalary());
-
+            System.out.printf("|%20s|%20s|%20s|%20s|",employees.get(key).getName(),employees.get(key).getID(),employees.get(key).getAge(),employees.get(key).getWeeklySalary());
+            System.out.println("");
         }
     }
     public void printListClients() {
-        System.out.printf("|%20s|%20s|%40s|", "Name:", "Phone Number", "Email:");
+        System.out.printf("|%20s|%20s|%20s|%40s|", "Name:", "Membership","Phone Number", "Email:");
         System.out.println("");
         System.out.printf("|%20s|", "Cars:");
+        System.out.println("");
 
         for (String key : clients.keySet()) {
             System.out.println("");
-            System.out.printf("|%20s|%20s|%40s|", clients.get(key).getName(), clients.get(key).getPhoneNumber(),
+            System.out.printf("|%20s|%20s|%20s|%40s|", clients.get(key).getName(), clients.get(key).getMemberTier(),clients.get(key).getPhoneNumber(),
                     clients.get(key).getEmail());
             System.out.println("");
             clients.get(key).printCarList();
@@ -486,7 +505,7 @@ public class Management {
             System.out.println("|"+services.get(key).getServiceName() +"|");
             System.out.println("--------------------------------");
             System.out.println("|" + services.get(key).getDescription()+"|");
-            System.out.printf("|$%.2f",services.get(key).getPrice());
+            System.out.printf("|$%.2f|",services.get(key).getPrice());
             System.out.println("");
         }
     }
@@ -511,7 +530,7 @@ public class Management {
         System.out.print("Enter the car's make: ");
         String makeInput = input.nextLine();
         input.reset();
-        System.out.print("Enter the car's model");
+        System.out.print("Enter the car's model: ");
         String modelInput = input.nextLine();
         input.reset();
         System.out.print("Enter the year model of the car: ");
@@ -612,6 +631,7 @@ public class Management {
     }
 
     public void deleteSale(){
+        printAllSales();
         System.out.print("To delete a sale: ");
         System.out.print("Enter sale ID: ");
         String oldsaleID = input.nextLine();
@@ -630,19 +650,22 @@ public class Management {
             System.out.println("Service " + services.get(key).getServiceName());
             System.out.println("-----------------");
             System.out.printf("Price: $%.2f",services.get(key).getPrice());
+            System.out.println("");
             System.out.println("Total Sold: " + services.get(key).getAmountSold());
-            System.out.println("Total Made: " + services.get(key).getPrice() * services.get(key).getAmountSold());
+
+            System.out.printf("Total Made: $%.2f",services.get(key).getPrice() * services.get(key).getAmountSold());
+            System.out.println("");
             System.out.println("----------------------------------");
 
         }
     }
 
     public void printAllSales(){
-
+        System.out.printf("|%20s|%20s|%20s|%20s|%20s|%20s|%20s|","ID:","Client:","Product:","# of Products","Price of Product:","Discount Applied:","Total Amount:");
+        System.out.println("");
         for(String key: sales.keySet()){
-            System.out.println("ID: " + sales.get(key).getID() + "     |Client: " + sales.get(key).getCustomer() + "     |Product: " + sales.get(key).getProduct() + "     |# of Products: " +
-                    sales.get(key).getProductAmount() + "     |Price of Product: $" + sales.get(key).getProductPrice() + "     |Total Amount: $"
-                    + sales.get(key).getTotalSaleAmount() + "     |");
+            System.out.printf("|%20s|%20s|%20s|%20s|$%20.2f|%20.2f|$%20.2f|",sales.get(key).getID(),sales.get(key).getCustomer(),sales.get(key).getProduct(),sales.get(key).getProductAmount(),sales.get(key).getProductPrice(),sales.get(key).getDiscount()*100,sales.get(key).getTotalSaleAmount());
+            System.out.println("");
         }
 
     }

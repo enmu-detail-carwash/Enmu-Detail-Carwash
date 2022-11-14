@@ -7,7 +7,6 @@ public class SpecialClient extends Client{
     private String memberTier;
 
 
-   //Still need to make constructors
     public SpecialClient(){
         super(null,null,null,null);
         this.discountAmount = 0;

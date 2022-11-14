@@ -6,7 +6,9 @@ public class menu {
     public Scanner input = new Scanner(System.in);
     public Management m = new Management();
 
+
     public void mainMenu(){
+        m.createDummyInfo();
         System.out.println("---------------------------------------------");
         System.out.println("ENMU Carwash Management System");
         System.out.println("---------------------------------------------");
@@ -225,7 +227,7 @@ public class menu {
         System.out.println("---------------------------------------------");
         System.out.println("");
 
-        m.modifyClient();
+        m.AssignMembership();
         option2();
     }
     public void option2_5(){
