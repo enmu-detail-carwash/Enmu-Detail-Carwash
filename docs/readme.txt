@@ -12,7 +12,7 @@ Compile and Run instructions.
 - To then run the Program you need to also use.java after compiling the main Menu to run.
 - Open the CMD (Command Prompt)
 - Find the destination where you saved the Java program
-- Compile it by typing: javac Enmu-Detail-Carwash.java
-- Run the program by typing: java Enmu-Detail-Carwash
+- Compile it by typing: javac Main.java
+- Run the program by typing: java Main
 - You will be prompted with a menu, with dummy information.
 - The code should compile and show the Menu; With different options to choose from.
