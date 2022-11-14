@@ -79,15 +79,6 @@ public class Appointment {
     }
 
     public void displayAppInfo(){
-
-//        int hours = AppTime.getHours();
-//        int Month = AppTime.getMonth() + 1;
-//        int Year = AppTime.getYear();
-//        int day = AppTime.getDate();
-//        int minutes = AppTime.getMinutes();
-
-
-//        System.out.println(client.getName() + "'s appointment on " + Month + "/" + day + "/" + Year + " at " +hours+":"+minutes);
         System.out.println(client.getName() + "'s appointment on " + AppDate + " at "+ AppTime);
         System.out.println("Client: " + client.getName());
         System.out.println("Vehicles: ");
@@ -98,7 +89,6 @@ public class Appointment {
         System.out.println(service.getDescription());
         System.out.println("Service Price: $" + service.getPrice());
 
-        //Need to add lines to pint the service name, price, and description
         System.out.println("Assigned Employee: " + employee.getName());
 
 

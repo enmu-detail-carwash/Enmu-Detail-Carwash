@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SpecialClient extends Client{
@@ -6,18 +7,24 @@ public class SpecialClient extends Client{
     private String memberTier;
 
 
-   //Still need to make constructors
     public SpecialClient(){
         super(null,null,null,null);
         this.discountAmount = 0;
         this.memberTier = null;
     }
-    public SpecialClient(String name, ArrayList<Car> cars, String phonenumber, String email, Membership m){
+    public SpecialClient(String name, String phonenumber, String email, Membership m){
 
-        super(name, phonenumber,email, cars);
+        super(name, phonenumber,email, null);
         this.discountAmount = m.getDiscount();
         this.memberTier = m.getTierName();
     }
+    public SpecialClient(String name, String phonenumber, String email, Membership m, ArrayList<Car> CarList){
+
+        super(name, phonenumber,email, CarList);
+        this.discountAmount = m.getDiscount();
+        this.memberTier = m.getTierName();
+    }
+
 
     public void setMembership(Membership m){
 

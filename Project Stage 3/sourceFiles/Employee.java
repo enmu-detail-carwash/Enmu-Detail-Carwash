@@ -4,8 +4,8 @@ public class Employee {
   private int Age; // - defaultValue;
   private String Name; // = defaultValue;
   private double WeeklySalary; // = defaultValue;
-  private int OThrs; // = defaultValue;
-  private double OTrate = 26.25;
+
+
   private boolean PayStatus = false;
 
   public Employee() {
@@ -56,20 +56,9 @@ public class Employee {
   }
   public double getWeeklySalary(){return WeeklySalary;}
 
-  public void setOThrs(int OThrs) {
-    this.OThrs = OThrs;
-  }
-
-  public int getOThrs() {
-    return OThrs;
-  }
-
-  public double getOTpay() {
-    return OTrate * OThrs;
-  }
 
   public double getTotalPay() {
-    return WeeklySalary + getOTpay();
+    return WeeklySalary;
   }
 
   public void paid() {
