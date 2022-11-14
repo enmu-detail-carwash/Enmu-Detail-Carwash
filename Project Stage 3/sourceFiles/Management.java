@@ -216,7 +216,7 @@ public class Management {
 
         printListClients();
         System.out.print("Enter the name of the client you want to delete: ");
-        String nameInput = input.next();
+        String nameInput = input.nextLine();
         input.reset();
 
         clients.remove(nameInput);
