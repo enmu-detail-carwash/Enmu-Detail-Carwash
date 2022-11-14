@@ -1,13 +1,18 @@
 # ENMU - Detail Car Wash
 
+Compile and Run instructions.
 
-# 
+
+- Download the zip folder.
 - You will need to unzip the files
 - You will just open the code via notepad ++
-- If so / save the Java program by using the class name, Easter followed by.java extension.
+- Save the Java program
+- Save by using the project name, ENMU-Detail-Carwash / to what location you want.
+- Followed by .java extension you will run / compile the Main Menu.
+- To then run the Program you need to also use.java after compiling the main Menu to run.
 - Open the CMD (Command Prompt)
 - Find the destination where you saved the Java program
-- Compile it by typing: javac Easter.java
-- Run the program by typing: java Easter
-- Type in the year: 2001
-- The code should compile and show the date of, April 15.
+- Compile it by typing: javac Enmu-Detail-Carwash.java
+- Run the program by typing: java Enmu-Detail-Carwash
+- You will be prompted with a menu, with dummy information.
+- The code should compile and show the Menu; With different options to choose from.
