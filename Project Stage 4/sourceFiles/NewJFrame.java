@@ -43,6 +43,7 @@ public class NewJFrame extends javax.swing.JFrame {
         appointmentPanel = new javax.swing.JPanel();
         appointmentTabs = new javax.swing.JTabbedPane();
         CalendarPane = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         appointCreatePane = new javax.swing.JPanel();
         appointModifyPane = new javax.swing.JPanel();
         appointDeletePane = new javax.swing.JPanel();
@@ -178,15 +179,23 @@ public class NewJFrame extends javax.swing.JFrame {
 
         appointmentTabs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel1.setText("Testing Commit");
+
         javax.swing.GroupLayout CalendarPaneLayout = new javax.swing.GroupLayout(CalendarPane);
         CalendarPane.setLayout(CalendarPaneLayout);
         CalendarPaneLayout.setHorizontalGroup(
             CalendarPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 704, Short.MAX_VALUE)
+            .addGroup(CalendarPaneLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(469, Short.MAX_VALUE))
         );
         CalendarPaneLayout.setVerticalGroup(
             CalendarPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGroup(CalendarPaneLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1)
+                .addContainerGap(545, Short.MAX_VALUE))
         );
 
         appointmentTabs.addTab("Calendar", CalendarPane);
@@ -504,6 +513,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel clientsPanel;
     private javax.swing.JButton employeesButton;
     private javax.swing.JPanel employeesPanel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
