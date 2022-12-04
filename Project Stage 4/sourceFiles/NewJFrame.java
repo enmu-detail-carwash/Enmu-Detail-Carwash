@@ -65,6 +65,7 @@ public class NewJFrame extends javax.swing.JFrame {
         serviceTabs = new javax.swing.JTabbedPane();
         serviceCreateTab = new javax.swing.JPanel();
         serviceModifyTab = new javax.swing.JPanel();
+        serviceRandomTab = new javax.swing.JPanel();
         salesPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jTabbedPane5 = new javax.swing.JTabbedPane();
@@ -410,6 +411,19 @@ public class NewJFrame extends javax.swing.JFrame {
 
         serviceTabs.addTab("Modify", serviceModifyTab);
 
+        javax.swing.GroupLayout serviceRandomTabLayout = new javax.swing.GroupLayout(serviceRandomTab);
+        serviceRandomTab.setLayout(serviceRandomTabLayout);
+        serviceRandomTabLayout.setHorizontalGroup(
+            serviceRandomTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 692, Short.MAX_VALUE)
+        );
+        serviceRandomTabLayout.setVerticalGroup(
+            serviceRandomTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 588, Short.MAX_VALUE)
+        );
+
+        serviceTabs.addTab("Random", serviceRandomTab);
+
         javax.swing.GroupLayout servicesPanelLayout = new javax.swing.GroupLayout(servicesPanel);
         servicesPanel.setLayout(servicesPanelLayout);
         servicesPanelLayout.setHorizontalGroup(
@@ -592,6 +606,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel salesPanel;
     private javax.swing.JPanel serviceCreateTab;
     private javax.swing.JPanel serviceModifyTab;
+    private javax.swing.JPanel serviceRandomTab;
     private javax.swing.JTabbedPane serviceTabs;
     private javax.swing.JButton servicesButton;
     private javax.swing.JPanel servicesPanel;
