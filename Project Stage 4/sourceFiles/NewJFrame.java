@@ -62,8 +62,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         servicesPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jTabbedPane4 = new javax.swing.JTabbedPane();
-        jPanel7 = new javax.swing.JPanel();
+        serviceTabs = new javax.swing.JTabbedPane();
+        serviceCreateTab = new javax.swing.JPanel();
+        serviceModifyTab = new javax.swing.JPanel();
         salesPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jTabbedPane5 = new javax.swing.JTabbedPane();
@@ -381,20 +382,33 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel4.setText("Services");
 
-        jTabbedPane4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
+        serviceTabs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout serviceCreateTabLayout = new javax.swing.GroupLayout(serviceCreateTab);
+        serviceCreateTab.setLayout(serviceCreateTabLayout);
+        serviceCreateTabLayout.setHorizontalGroup(
+            serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 704, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        serviceCreateTabLayout.setVerticalGroup(
+            serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 590, Short.MAX_VALUE)
         );
 
-        jTabbedPane4.addTab("tab1", jPanel7);
+        serviceTabs.addTab("Create", serviceCreateTab);
+
+        javax.swing.GroupLayout serviceModifyTabLayout = new javax.swing.GroupLayout(serviceModifyTab);
+        serviceModifyTab.setLayout(serviceModifyTabLayout);
+        serviceModifyTabLayout.setHorizontalGroup(
+            serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 704, Short.MAX_VALUE)
+        );
+        serviceModifyTabLayout.setVerticalGroup(
+            serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 590, Short.MAX_VALUE)
+        );
+
+        serviceTabs.addTab("Modify", serviceModifyTab);
 
         javax.swing.GroupLayout servicesPanelLayout = new javax.swing.GroupLayout(servicesPanel);
         servicesPanel.setLayout(servicesPanelLayout);
@@ -404,14 +418,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jTabbedPane4)
+            .addComponent(serviceTabs)
         );
         servicesPanelLayout.setVerticalGroup(
             servicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(servicesPanelLayout.createSequentialGroup()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane4))
+                .addComponent(serviceTabs))
         );
 
         rightCardPanel.add(servicesPanel, "servicesPanel");
@@ -564,13 +578,11 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel mainMenu;
@@ -578,6 +590,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel rightCardPanel;
     private javax.swing.JButton salesButton;
     private javax.swing.JPanel salesPanel;
+    private javax.swing.JPanel serviceCreateTab;
+    private javax.swing.JPanel serviceModifyTab;
+    private javax.swing.JTabbedPane serviceTabs;
     private javax.swing.JButton servicesButton;
     private javax.swing.JPanel servicesPanel;
     // End of variables declaration//GEN-END:variables
