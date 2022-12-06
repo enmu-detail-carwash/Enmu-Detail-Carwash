@@ -60,6 +60,15 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel6 = new javax.swing.JPanel();
+        jTabbedPane17 = new javax.swing.JTabbedPane();
+        jTabbedPane18 = new javax.swing.JTabbedPane();
+        jTabbedPane19 = new javax.swing.JTabbedPane();
+        jTabbedPane20 = new javax.swing.JTabbedPane();
+        jTabbedPane21 = new javax.swing.JTabbedPane();
+        jTabbedPane22 = new javax.swing.JTabbedPane();
+        jTabbedPane23 = new javax.swing.JTabbedPane();
+        jTabbedPane24 = new javax.swing.JTabbedPane();
+        jTabbedPane25 = new javax.swing.JTabbedPane();
         servicesPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         serviceTabs = new javax.swing.JTabbedPane();
@@ -71,8 +80,17 @@ public class NewJFrame extends javax.swing.JFrame {
         selectOption = new javax.swing.JLabel();
         invalidOption = new javax.swing.JLabel();
         serviceEnterNumber = new java.awt.TextField();
-        jLabel6 = new javax.swing.JLabel();
         serviceMessage = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
+        jTabbedPane6 = new javax.swing.JTabbedPane();
+        jTabbedPane7 = new javax.swing.JTabbedPane();
+        jTabbedPane8 = new javax.swing.JTabbedPane();
+        jTabbedPane9 = new javax.swing.JTabbedPane();
+        jTabbedPane10 = new javax.swing.JTabbedPane();
+        jTabbedPane11 = new javax.swing.JTabbedPane();
+        jTabbedPane14 = new javax.swing.JTabbedPane();
+        jTabbedPane15 = new javax.swing.JTabbedPane();
         salesPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jTabbedPane5 = new javax.swing.JTabbedPane();
@@ -225,7 +243,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(619, Short.MAX_VALUE))
+                .addContainerGap(453, Short.MAX_VALUE))
         );
         CalendarPaneLayout.setVerticalGroup(
             CalendarPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,7 +265,7 @@ public class NewJFrame extends javax.swing.JFrame {
         appointCreatePane.setLayout(appointCreatePaneLayout);
         appointCreatePaneLayout.setHorizontalGroup(
             appointCreatePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 862, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
         );
         appointCreatePaneLayout.setVerticalGroup(
             appointCreatePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,7 +278,7 @@ public class NewJFrame extends javax.swing.JFrame {
         appointModifyPane.setLayout(appointModifyPaneLayout);
         appointModifyPaneLayout.setHorizontalGroup(
             appointModifyPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 862, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
         );
         appointModifyPaneLayout.setVerticalGroup(
             appointModifyPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,7 +291,7 @@ public class NewJFrame extends javax.swing.JFrame {
         appointDeletePane.setLayout(appointDeletePaneLayout);
         appointDeletePaneLayout.setHorizontalGroup(
             appointDeletePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 862, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
         );
         appointDeletePaneLayout.setVerticalGroup(
             appointDeletePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,7 +334,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 862, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,19 +369,33 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel3.setText("Employees");
 
         jTabbedPane3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
+        jTabbedPane3.addHierarchyListener(new java.awt.event.HierarchyListener() {
+            public void hierarchyChanged(java.awt.event.HierarchyEvent evt) {
+                jTabbedPane3HierarchyChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 862, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGap(0, 530, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("tab1", jPanel6);
+        jTabbedPane3.addTab("1: Create Client", jPanel6);
+        jTabbedPane3.addTab("2: Delete Client", jTabbedPane17);
+        jTabbedPane3.addTab("3: Modify Client", jTabbedPane18);
+        jTabbedPane3.addTab("4: Change Client's Membership Tier", jTabbedPane19);
+        jTabbedPane3.addTab("5: Add Client's Cars", jTabbedPane20);
+        jTabbedPane3.addTab(" 6: Remove Client's Cars", jTabbedPane21);
+        jTabbedPane3.addTab(" 7: Modify Client's Cars", jTabbedPane22);
+        jTabbedPane3.addTab("8: View Client Info", jTabbedPane23);
+        jTabbedPane3.addTab(" 9: View List of Clients", jTabbedPane24);
+        jTabbedPane3.addTab(" 10: Return to the Main Menu", jTabbedPane25);
 
         javax.swing.GroupLayout employeesPanelLayout = new javax.swing.GroupLayout(employeesPanel);
         employeesPanel.setLayout(employeesPanelLayout);
@@ -380,7 +412,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(employeesPanelLayout.createSequentialGroup()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane3))
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE))
         );
 
         rightCardPanel.add(employeesPanel, "employeesPanel");
@@ -411,8 +443,6 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("jLabel6");
-
         serviceMessage.setText("If you enter a number outside of : 1-11  It will prompt an error message.");
 
         javax.swing.GroupLayout serviceMainTabLayout = new javax.swing.GroupLayout(serviceMainTab);
@@ -422,43 +452,48 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(serviceMainTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(serviceMainTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(serviceMainTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(serviceMainTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(serviceChoice)
-                            .addGroup(serviceMainTabLayout.createSequentialGroup()
-                                .addGap(171, 171, 171)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)))
-                        .addComponent(selectOption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane4))
                     .addGroup(serviceMainTabLayout.createSequentialGroup()
-                        .addGap(375, 375, 375)
-                        .addComponent(jLabel6))
-                    .addComponent(serviceMessage)
+                        .addGap(175, 175, 175)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(serviceEnterNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(invalidOption, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(440, Short.MAX_VALUE))
+                    .addComponent(invalidOption, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(serviceMessage)
+                    .addComponent(selectOption)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(serviceChoice))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
         serviceMainTabLayout.setVerticalGroup(
             serviceMainTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(serviceMainTabLayout.createSequentialGroup()
-                .addComponent(serviceChoice)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(22, 22, 22)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                .addComponent(serviceChoice)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(selectOption, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(serviceEnterNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addComponent(serviceMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(invalidOption, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
-                .addComponent(jLabel6))
+                .addGap(23, 23, 23))
         );
 
         serviceTabs.addTab("Main - Page", serviceMainTab);
+        serviceTabs.addTab("Create", jTabbedPane1);
+        serviceTabs.addTab("Delete", jTabbedPane4);
+        serviceTabs.addTab("Modify", jTabbedPane6);
+        serviceTabs.addTab("Create Member Tier", jTabbedPane7);
+        serviceTabs.addTab("Delete Member Tier", jTabbedPane8);
+        serviceTabs.addTab("Modify Member Tier", jTabbedPane9);
+        serviceTabs.addTab("View Service Info", jTabbedPane10);
+        serviceTabs.addTab("View List of Services", jTabbedPane11);
+        serviceTabs.addTab("List of Member Tiers", jTabbedPane14);
+        serviceTabs.addTab("Return to the Main Menu", jTabbedPane15);
 
         javax.swing.GroupLayout servicesPanelLayout = new javax.swing.GroupLayout(servicesPanel);
         servicesPanel.setLayout(servicesPanelLayout);
@@ -491,7 +526,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 862, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -526,14 +561,14 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSplitPane2)
         );
 
-        setSize(new java.awt.Dimension(912, 656));
+        setSize(new java.awt.Dimension(916, 656));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -574,6 +609,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private void serviceEnterNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceEnterNumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_serviceEnterNumberActionPerformed
+
+    private void jTabbedPane3HierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jTabbedPane3HierarchyChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTabbedPane3HierarchyChanged
 
     /**
      * @param args the command line arguments
@@ -631,18 +670,35 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSplitPane jSplitPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane10;
+    private javax.swing.JTabbedPane jTabbedPane11;
+    private javax.swing.JTabbedPane jTabbedPane14;
+    private javax.swing.JTabbedPane jTabbedPane15;
+    private javax.swing.JTabbedPane jTabbedPane17;
+    private javax.swing.JTabbedPane jTabbedPane18;
+    private javax.swing.JTabbedPane jTabbedPane19;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane20;
+    private javax.swing.JTabbedPane jTabbedPane21;
+    private javax.swing.JTabbedPane jTabbedPane22;
+    private javax.swing.JTabbedPane jTabbedPane23;
+    private javax.swing.JTabbedPane jTabbedPane24;
+    private javax.swing.JTabbedPane jTabbedPane25;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
+    private javax.swing.JTabbedPane jTabbedPane6;
+    private javax.swing.JTabbedPane jTabbedPane7;
+    private javax.swing.JTabbedPane jTabbedPane8;
+    private javax.swing.JTabbedPane jTabbedPane9;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel mainTitleLabel;
