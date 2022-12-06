@@ -672,19 +672,27 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="serviceChoice" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                                              <Component id="jScrollPane3" pref="16" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="serviceChoice" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
+                                                  <Component id="jScrollPane3" pref="16" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
+                                          <Component id="selectOption" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="selectOption" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="invalidOption" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="375" max="-2" attributes="0"/>
+                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="serviceMessage" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="serviceEnterNumber" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
+                                      <Component id="invalidOption" alignment="0" min="-2" pref="309" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="555" max="32767" attributes="0"/>
+                                  <EmptySpace pref="448" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -699,8 +707,13 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="selectOption" min="-2" pref="28" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="serviceEnterNumber" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="serviceMessage" min="-2" pref="38" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="invalidOption" min="-2" pref="34" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="275" max="32767" attributes="0"/>
+                                  <EmptySpace pref="181" max="32767" attributes="0"/>
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -722,7 +735,7 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JList" name="serviceList">
+                            <Component class="javax.swing.JList" name="serviceListOptions">
                               <Properties>
                                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                                   <StringArray count="11">
@@ -754,6 +767,21 @@
                         <Component class="javax.swing.JLabel" name="invalidOption">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="You entered an invalid option. Please try again: "/>
+                          </Properties>
+                        </Component>
+                        <Component class="java.awt.TextField" name="serviceEnterNumber">
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="serviceEnterNumberActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel6">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel6"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="serviceMessage">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="If you enter a number outside of : 1-11 it will prompt an error message."/>
                           </Properties>
                         </Component>
                       </SubComponents>

@@ -67,9 +67,12 @@ public class NewJFrame extends javax.swing.JFrame {
         serviceChoice = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        serviceList = new javax.swing.JList<>();
+        serviceListOptions = new javax.swing.JList<>();
         selectOption = new javax.swing.JLabel();
         invalidOption = new javax.swing.JLabel();
+        serviceEnterNumber = new java.awt.TextField();
+        jLabel6 = new javax.swing.JLabel();
+        serviceMessage = new javax.swing.JLabel();
         serviceModifyTab = new javax.swing.JPanel();
         serviceRandomTab = new javax.swing.JPanel();
         salesPanel = new javax.swing.JPanel();
@@ -393,16 +396,26 @@ public class NewJFrame extends javax.swing.JFrame {
 
         serviceChoice.setText("What would you like to do?");
 
-        serviceList.setModel(new javax.swing.AbstractListModel<String>() {
+        serviceListOptions.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1: Create Service", "2: Delete Service", "3: Modify Service", "4: Create Member Tier", "5: Delete Member Tier", "6: Modify Member Tier", "7: View Service Info", "8: View List of Services", "9: View Member Tier Info", "10: List of Member Tiers", "11: Return to the Main Menu" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane4.setViewportView(serviceList);
+        jScrollPane4.setViewportView(serviceListOptions);
 
         selectOption.setText("To select an option, enter the corresponding number:  1-11");
 
         invalidOption.setText("You entered an invalid option. Please try again: ");
+
+        serviceEnterNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceEnterNumberActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("jLabel6");
+
+        serviceMessage.setText("If you enter a number outside of : 1-11 it will prompt an error message.");
 
         javax.swing.GroupLayout serviceCreateTabLayout = new javax.swing.GroupLayout(serviceCreateTab);
         serviceCreateTab.setLayout(serviceCreateTabLayout);
@@ -410,16 +423,22 @@ public class NewJFrame extends javax.swing.JFrame {
             serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(serviceCreateTabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(serviceChoice)
-                        .addGroup(serviceCreateTabLayout.createSequentialGroup()
-                            .addGap(171, 171, 171)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)))
-                    .addComponent(selectOption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane4)
-                    .addComponent(invalidOption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(555, Short.MAX_VALUE))
+                        .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(serviceChoice)
+                            .addGroup(serviceCreateTabLayout.createSequentialGroup()
+                                .addGap(171, 171, 171)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)))
+                        .addComponent(selectOption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4))
+                    .addGroup(serviceCreateTabLayout.createSequentialGroup()
+                        .addGap(375, 375, 375)
+                        .addComponent(jLabel6))
+                    .addComponent(serviceMessage)
+                    .addComponent(serviceEnterNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(invalidOption, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(448, Short.MAX_VALUE))
         );
         serviceCreateTabLayout.setVerticalGroup(
             serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,8 +451,13 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(selectOption, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(serviceEnterNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(serviceMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(invalidOption, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 275, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addComponent(jLabel6))
         );
 
         serviceTabs.addTab("Create", serviceCreateTab);
@@ -575,6 +599,10 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void serviceEnterNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceEnterNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceEnterNumberActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -631,6 +659,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
@@ -651,7 +680,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel selectOption;
     private javax.swing.JLabel serviceChoice;
     private javax.swing.JPanel serviceCreateTab;
-    private javax.swing.JList<String> serviceList;
+    private java.awt.TextField serviceEnterNumber;
+    private javax.swing.JList<String> serviceListOptions;
+    private javax.swing.JLabel serviceMessage;
     private javax.swing.JPanel serviceModifyTab;
     private javax.swing.JPanel serviceRandomTab;
     private javax.swing.JTabbedPane serviceTabs;
