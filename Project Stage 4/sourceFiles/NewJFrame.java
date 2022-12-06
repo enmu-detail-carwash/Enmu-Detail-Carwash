@@ -67,9 +67,9 @@ public class NewJFrame extends javax.swing.JFrame {
         serviceChoice = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        serviceList = new javax.swing.JList<>();
+        selectOption = new javax.swing.JLabel();
+        invalidOption = new javax.swing.JLabel();
         serviceModifyTab = new javax.swing.JPanel();
         serviceRandomTab = new javax.swing.JPanel();
         salesPanel = new javax.swing.JPanel();
@@ -393,16 +393,16 @@ public class NewJFrame extends javax.swing.JFrame {
 
         serviceChoice.setText("What would you like to do?");
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        serviceList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1: Create Service", "2: Delete Service", "3: Modify Service", "4: Create Member Tier", "5: Delete Member Tier", "6: Modify Member Tier", "7: View Service Info", "8: View List of Services", "9: View Member Tier Info", "10: List of Member Tiers", "11: Return to the Main Menu" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane4.setViewportView(jList2);
+        jScrollPane4.setViewportView(serviceList);
 
-        jLabel6.setText("To select an option, enter the corresponding number:  1-11");
+        selectOption.setText("To select an option, enter the corresponding number:  1-11");
 
-        jLabel7.setText("You entered an invalid option. Please try again: ");
+        invalidOption.setText("You entered an invalid option. Please try again: ");
 
         javax.swing.GroupLayout serviceCreateTabLayout = new javax.swing.GroupLayout(serviceCreateTab);
         serviceCreateTab.setLayout(serviceCreateTabLayout);
@@ -416,9 +416,9 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGroup(serviceCreateTabLayout.createSequentialGroup()
                             .addGap(171, 171, 171)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(selectOption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane4)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(invalidOption, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(555, Short.MAX_VALUE))
         );
         serviceCreateTabLayout.setVerticalGroup(
@@ -430,9 +430,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selectOption, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(invalidOption, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 275, Short.MAX_VALUE))
         );
 
@@ -623,6 +623,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel clientsPanel;
     private javax.swing.JButton employeesButton;
     private javax.swing.JPanel employeesPanel;
+    private javax.swing.JLabel invalidOption;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
@@ -630,9 +631,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
@@ -650,8 +648,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel rightCardPanel;
     private javax.swing.JButton salesButton;
     private javax.swing.JPanel salesPanel;
+    private javax.swing.JLabel selectOption;
     private javax.swing.JLabel serviceChoice;
     private javax.swing.JPanel serviceCreateTab;
+    private javax.swing.JList<String> serviceList;
     private javax.swing.JPanel serviceModifyTab;
     private javax.swing.JPanel serviceRandomTab;
     private javax.swing.JTabbedPane serviceTabs;
