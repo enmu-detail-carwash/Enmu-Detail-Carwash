@@ -64,6 +64,12 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         serviceTabs = new javax.swing.JTabbedPane();
         serviceCreateTab = new javax.swing.JPanel();
+        serviceChoice = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         serviceModifyTab = new javax.swing.JPanel();
         serviceRandomTab = new javax.swing.JPanel();
         salesPanel = new javax.swing.JPanel();
@@ -385,15 +391,49 @@ public class NewJFrame extends javax.swing.JFrame {
 
         serviceTabs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
 
+        serviceChoice.setText("What would you like to do?");
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "1: Create Service", "2: Delete Service", "3: Modify Service", "4: Create Member Tier", "5: Delete Member Tier", "6: Modify Member Tier", "7: View Service Info", "8: View List of Services", "9: View Member Tier Info", "10: List of Member Tiers", "11: Return to the Main Menu" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(jList2);
+
+        jLabel6.setText("To select an option, enter the corresponding number:  1-11");
+
+        jLabel7.setText("You entered an invalid option. Please try again: ");
+
         javax.swing.GroupLayout serviceCreateTabLayout = new javax.swing.GroupLayout(serviceCreateTab);
         serviceCreateTab.setLayout(serviceCreateTabLayout);
         serviceCreateTabLayout.setHorizontalGroup(
             serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 704, Short.MAX_VALUE)
+            .addGroup(serviceCreateTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(serviceChoice)
+                        .addGroup(serviceCreateTabLayout.createSequentialGroup()
+                            .addGap(171, 171, 171)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(555, Short.MAX_VALUE))
         );
         serviceCreateTabLayout.setVerticalGroup(
             serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGroup(serviceCreateTabLayout.createSequentialGroup()
+                .addComponent(serviceChoice)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 275, Short.MAX_VALUE))
         );
 
         serviceTabs.addTab("Create", serviceCreateTab);
@@ -402,7 +442,7 @@ public class NewJFrame extends javax.swing.JFrame {
         serviceModifyTab.setLayout(serviceModifyTabLayout);
         serviceModifyTabLayout.setHorizontalGroup(
             serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 704, Short.MAX_VALUE)
+            .addGap(0, 870, Short.MAX_VALUE)
         );
         serviceModifyTabLayout.setVerticalGroup(
             serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,11 +455,11 @@ public class NewJFrame extends javax.swing.JFrame {
         serviceRandomTab.setLayout(serviceRandomTabLayout);
         serviceRandomTabLayout.setHorizontalGroup(
             serviceRandomTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 692, Short.MAX_VALUE)
+            .addGap(0, 870, Short.MAX_VALUE)
         );
         serviceRandomTabLayout.setVerticalGroup(
             serviceRandomTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
 
         serviceTabs.addTab("Random", serviceRandomTab);
@@ -432,7 +472,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(serviceTabs)
+            .addComponent(serviceTabs, javax.swing.GroupLayout.DEFAULT_SIZE, 872, Short.MAX_VALUE)
         );
         servicesPanelLayout.setVerticalGroup(
             servicesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -590,10 +630,16 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
@@ -604,6 +650,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel rightCardPanel;
     private javax.swing.JButton salesButton;
     private javax.swing.JPanel salesPanel;
+    private javax.swing.JLabel serviceChoice;
     private javax.swing.JPanel serviceCreateTab;
     private javax.swing.JPanel serviceModifyTab;
     private javax.swing.JPanel serviceRandomTab;
