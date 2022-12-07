@@ -56,6 +56,15 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
+        jTabbedPane17 = new javax.swing.JTabbedPane();
+        jTabbedPane22 = new javax.swing.JTabbedPane();
+        jTabbedPane23 = new javax.swing.JTabbedPane();
+        jTabbedPane24 = new javax.swing.JTabbedPane();
+        jTabbedPane25 = new javax.swing.JTabbedPane();
+        jTabbedPane26 = new javax.swing.JTabbedPane();
+        jTabbedPane27 = new javax.swing.JTabbedPane();
+        jTabbedPane28 = new javax.swing.JTabbedPane();
+        jTabbedPane29 = new javax.swing.JTabbedPane();
         employeesPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -243,7 +252,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(453, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CalendarPaneLayout.setVerticalGroup(
             CalendarPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +265,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(CalendarPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
                     .addComponent(jButton1))
-                .addContainerGap(419, Short.MAX_VALUE))
+                .addContainerGap(389, Short.MAX_VALUE))
         );
 
         appointmentTabs.addTab("Calendar", CalendarPane);
@@ -265,11 +274,11 @@ public class NewJFrame extends javax.swing.JFrame {
         appointCreatePane.setLayout(appointCreatePaneLayout);
         appointCreatePaneLayout.setHorizontalGroup(
             appointCreatePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 696, Short.MAX_VALUE)
+            .addGap(0, 146, Short.MAX_VALUE)
         );
         appointCreatePaneLayout.setVerticalGroup(
             appointCreatePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         appointmentTabs.addTab("Create", appointCreatePane);
@@ -278,11 +287,11 @@ public class NewJFrame extends javax.swing.JFrame {
         appointModifyPane.setLayout(appointModifyPaneLayout);
         appointModifyPaneLayout.setHorizontalGroup(
             appointModifyPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 696, Short.MAX_VALUE)
+            .addGap(0, 146, Short.MAX_VALUE)
         );
         appointModifyPaneLayout.setVerticalGroup(
             appointModifyPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         appointmentTabs.addTab("Modify", appointModifyPane);
@@ -291,11 +300,11 @@ public class NewJFrame extends javax.swing.JFrame {
         appointDeletePane.setLayout(appointDeletePaneLayout);
         appointDeletePaneLayout.setHorizontalGroup(
             appointDeletePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 696, Short.MAX_VALUE)
+            .addGap(0, 146, Short.MAX_VALUE)
         );
         appointDeletePaneLayout.setVerticalGroup(
             appointDeletePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGap(0, 560, Short.MAX_VALUE)
         );
 
         appointmentTabs.addTab("Delete", appointDeletePane);
@@ -338,10 +347,19 @@ public class NewJFrame extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGap(0, 530, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab1", jPanel5);
+        jTabbedPane2.addTab("1: Create Client", jPanel5);
+        jTabbedPane2.addTab(" 2: Delete Client", jTabbedPane17);
+        jTabbedPane2.addTab(" 3: Modify Client", jTabbedPane22);
+        jTabbedPane2.addTab(" 4: Change Client's Membership tier", jTabbedPane23);
+        jTabbedPane2.addTab(" 5: Add Client's Cars", jTabbedPane24);
+        jTabbedPane2.addTab(" 6: Remove Client's Cars", jTabbedPane25);
+        jTabbedPane2.addTab("7: Modify Client's Cars", jTabbedPane26);
+        jTabbedPane2.addTab(" 8: View Client Info", jTabbedPane27);
+        jTabbedPane2.addTab("9: View List of Clients", jTabbedPane28);
+        jTabbedPane2.addTab("10: Return to the Main Menu", jTabbedPane29);
 
         javax.swing.GroupLayout clientsPanelLayout = new javax.swing.GroupLayout(clientsPanel);
         clientsPanel.setLayout(clientsPanelLayout);
@@ -698,11 +716,20 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane14;
     private javax.swing.JTabbedPane jTabbedPane15;
     private javax.swing.JTabbedPane jTabbedPane16;
+    private javax.swing.JTabbedPane jTabbedPane17;
     private javax.swing.JTabbedPane jTabbedPane18;
     private javax.swing.JTabbedPane jTabbedPane19;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane20;
     private javax.swing.JTabbedPane jTabbedPane21;
+    private javax.swing.JTabbedPane jTabbedPane22;
+    private javax.swing.JTabbedPane jTabbedPane23;
+    private javax.swing.JTabbedPane jTabbedPane24;
+    private javax.swing.JTabbedPane jTabbedPane25;
+    private javax.swing.JTabbedPane jTabbedPane26;
+    private javax.swing.JTabbedPane jTabbedPane27;
+    private javax.swing.JTabbedPane jTabbedPane28;
+    private javax.swing.JTabbedPane jTabbedPane29;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
