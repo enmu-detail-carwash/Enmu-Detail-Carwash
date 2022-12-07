@@ -535,10 +535,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jTabbedPane3" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jTabbedPane3" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -546,7 +551,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTabbedPane3" pref="623" max="32767" attributes="0"/>
+                          <Component id="jTabbedPane3" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -576,11 +581,58 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>
+                    <Container class="javax.swing.JTabbedPane" name="jTabbedPane16">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName="Main - Page">
+                            <Property name="tabTitle" type="java.lang.String" value="Main - Page"/>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+                      <SubComponents>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                              <JTabbedPaneConstraints tabName="What would you like to do? ">
+                                <Property name="tabTitle" type="java.lang.String" value="What would you like to do? "/>
+                              </JTabbedPaneConstraints>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JList" name="jList2">
+                              <Properties>
+                                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                                  <StringArray count="7">
+                                    <StringItem index="0" value="1: Create Employee"/>
+                                    <StringItem index="1" value="2: Delete Employee"/>
+                                    <StringItem index="2" value="3: Modify Employee"/>
+                                    <StringItem index="3" value="4: View Employee Info"/>
+                                    <StringItem index="4" value="5: View List of Employees"/>
+                                    <StringItem index="5" value="6: Return to the Main Menu"/>
+                                    <StringItem index="6" value=" "/>
+                                  </StringArray>
+                                </Property>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                              </AuxValues>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
                     <Container class="javax.swing.JPanel" name="jPanel6">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="1: Create Client">
-                            <Property name="tabTitle" type="java.lang.String" value="1: Create Client"/>
+                          <JTabbedPaneConstraints tabName=" 1: Create Employee">
+                            <Property name="tabTitle" type="java.lang.String" value=" 1: Create Employee"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -588,21 +640,21 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="696" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="684" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="530" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="558" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                     </Container>
-                    <Container class="javax.swing.JTabbedPane" name="jTabbedPane17">
+                    <Container class="javax.swing.JTabbedPane" name="jTabbedPane12">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="2: Delete Client">
-                            <Property name="tabTitle" type="java.lang.String" value="2: Delete Client"/>
+                          <JTabbedPaneConstraints tabName=" 2: Delete Employee">
+                            <Property name="tabTitle" type="java.lang.String" value=" 2: Delete Employee"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -612,8 +664,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane18">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="3: Modify Client">
-                            <Property name="tabTitle" type="java.lang.String" value="3: Modify Client"/>
+                          <JTabbedPaneConstraints tabName=" 3: Modify Employee">
+                            <Property name="tabTitle" type="java.lang.String" value=" 3: Modify Employee"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -623,8 +675,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane19">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="4: Change Client&apos;s Membership Tier">
-                            <Property name="tabTitle" type="java.lang.String" value="4: Change Client&apos;s Membership Tier"/>
+                          <JTabbedPaneConstraints tabName=" 4: View Employee Info">
+                            <Property name="tabTitle" type="java.lang.String" value=" 4: View Employee Info"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -634,8 +686,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane20">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="5: Add Client&apos;s Cars">
-                            <Property name="tabTitle" type="java.lang.String" value="5: Add Client&apos;s Cars"/>
+                          <JTabbedPaneConstraints tabName=" 5: View List of Employees">
+                            <Property name="tabTitle" type="java.lang.String" value=" 5: View List of Employees"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -645,52 +697,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane21">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName=" 6: Remove Client&apos;s Cars">
-                            <Property name="tabTitle" type="java.lang.String" value=" 6: Remove Client&apos;s Cars"/>
-                          </JTabbedPaneConstraints>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
-                    </Container>
-                    <Container class="javax.swing.JTabbedPane" name="jTabbedPane22">
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName=" 7: Modify Client&apos;s Cars">
-                            <Property name="tabTitle" type="java.lang.String" value=" 7: Modify Client&apos;s Cars"/>
-                          </JTabbedPaneConstraints>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
-                    </Container>
-                    <Container class="javax.swing.JTabbedPane" name="jTabbedPane23">
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="8: View Client Info">
-                            <Property name="tabTitle" type="java.lang.String" value="8: View Client Info"/>
-                          </JTabbedPaneConstraints>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
-                    </Container>
-                    <Container class="javax.swing.JTabbedPane" name="jTabbedPane24">
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName=" 9: View List of Clients">
-                            <Property name="tabTitle" type="java.lang.String" value=" 9: View List of Clients"/>
-                          </JTabbedPaneConstraints>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
-                    </Container>
-                    <Container class="javax.swing.JTabbedPane" name="jTabbedPane25">
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName=" 10: Return to the Main Menu">
-                            <Property name="tabTitle" type="java.lang.String" value=" 10: Return to the Main Menu"/>
+                          <JTabbedPaneConstraints tabName=" 6: Return to the Main Menu">
+                            <Property name="tabTitle" type="java.lang.String" value=" 6: Return to the Main Menu"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -795,7 +803,7 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="135" max="32767" attributes="0"/>
+                                  <EmptySpace pref="105" max="32767" attributes="0"/>
                                   <Component id="serviceChoice" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jScrollPane4" min="-2" pref="211" max="-2" attributes="0"/>
@@ -878,8 +886,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Create">
-                            <Property name="tabTitle" type="java.lang.String" value="Create"/>
+                          <JTabbedPaneConstraints tabName="1: Create Service">
+                            <Property name="tabTitle" type="java.lang.String" value="1: Create Service"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -889,8 +897,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane4">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Delete">
-                            <Property name="tabTitle" type="java.lang.String" value="Delete"/>
+                          <JTabbedPaneConstraints tabName="2: Delete Service">
+                            <Property name="tabTitle" type="java.lang.String" value="2: Delete Service"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -900,8 +908,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane6">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Modify">
-                            <Property name="tabTitle" type="java.lang.String" value="Modify"/>
+                          <JTabbedPaneConstraints tabName="3: Modify Service">
+                            <Property name="tabTitle" type="java.lang.String" value="3: Modify Service"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -911,8 +919,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane7">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Create Member Tier">
-                            <Property name="tabTitle" type="java.lang.String" value="Create Member Tier"/>
+                          <JTabbedPaneConstraints tabName="4: Create Member Tier">
+                            <Property name="tabTitle" type="java.lang.String" value="4: Create Member Tier"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -922,8 +930,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane8">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Delete Member Tier">
-                            <Property name="tabTitle" type="java.lang.String" value="Delete Member Tier"/>
+                          <JTabbedPaneConstraints tabName="5: Delete Member Tier">
+                            <Property name="tabTitle" type="java.lang.String" value="5: Delete Member Tier"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -933,8 +941,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane9">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Modify Member Tier">
-                            <Property name="tabTitle" type="java.lang.String" value="Modify Member Tier"/>
+                          <JTabbedPaneConstraints tabName="6: Modify Member Tier">
+                            <Property name="tabTitle" type="java.lang.String" value="6: Modify Member Tier"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -944,8 +952,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane10">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="View Service Info">
-                            <Property name="tabTitle" type="java.lang.String" value="View Service Info"/>
+                          <JTabbedPaneConstraints tabName="7: View Service Info">
+                            <Property name="tabTitle" type="java.lang.String" value="7: View Service Info"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -955,8 +963,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane11">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="View List of Services">
-                            <Property name="tabTitle" type="java.lang.String" value="View List of Services"/>
+                          <JTabbedPaneConstraints tabName="8: View List of Services">
+                            <Property name="tabTitle" type="java.lang.String" value="8: View List of Services"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -966,8 +974,19 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane14">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="List of Member Tiers">
-                            <Property name="tabTitle" type="java.lang.String" value="List of Member Tiers"/>
+                          <JTabbedPaneConstraints tabName="9: List of Member Tiers">
+                            <Property name="tabTitle" type="java.lang.String" value="9: List of Member Tiers"/>
+                          </JTabbedPaneConstraints>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+                    </Container>
+                    <Container class="javax.swing.JTabbedPane" name="jTabbedPane13">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                          <JTabbedPaneConstraints tabName="10: List of Member Tiers">
+                            <Property name="tabTitle" type="java.lang.String" value="10: List of Member Tiers"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -977,8 +996,8 @@
                     <Container class="javax.swing.JTabbedPane" name="jTabbedPane15">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Return to the Main Menu">
-                            <Property name="tabTitle" type="java.lang.String" value="Return to the Main Menu"/>
+                          <JTabbedPaneConstraints tabName="11: Return to the Main Menu">
+                            <Property name="tabTitle" type="java.lang.String" value="11: Return to the Main Menu"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>

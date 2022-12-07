@@ -59,16 +59,15 @@ public class NewJFrame extends javax.swing.JFrame {
         employeesPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
+        jTabbedPane16 = new javax.swing.JTabbedPane();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
         jPanel6 = new javax.swing.JPanel();
-        jTabbedPane17 = new javax.swing.JTabbedPane();
+        jTabbedPane12 = new javax.swing.JTabbedPane();
         jTabbedPane18 = new javax.swing.JTabbedPane();
         jTabbedPane19 = new javax.swing.JTabbedPane();
         jTabbedPane20 = new javax.swing.JTabbedPane();
         jTabbedPane21 = new javax.swing.JTabbedPane();
-        jTabbedPane22 = new javax.swing.JTabbedPane();
-        jTabbedPane23 = new javax.swing.JTabbedPane();
-        jTabbedPane24 = new javax.swing.JTabbedPane();
-        jTabbedPane25 = new javax.swing.JTabbedPane();
         servicesPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         serviceTabs = new javax.swing.JTabbedPane();
@@ -90,6 +89,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jTabbedPane10 = new javax.swing.JTabbedPane();
         jTabbedPane11 = new javax.swing.JTabbedPane();
         jTabbedPane14 = new javax.swing.JTabbedPane();
+        jTabbedPane13 = new javax.swing.JTabbedPane();
         jTabbedPane15 = new javax.swing.JTabbedPane();
         salesPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -375,27 +375,34 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "1: Create Employee", "2: Delete Employee", "3: Modify Employee", "4: View Employee Info", "5: View List of Employees", "6: Return to the Main Menu", " " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane5.setViewportView(jList2);
+
+        jTabbedPane16.addTab("What would you like to do? ", jScrollPane5);
+
+        jTabbedPane3.addTab("Main - Page", jTabbedPane16);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 696, Short.MAX_VALUE)
+            .addGap(0, 684, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 558, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("1: Create Client", jPanel6);
-        jTabbedPane3.addTab("2: Delete Client", jTabbedPane17);
-        jTabbedPane3.addTab("3: Modify Client", jTabbedPane18);
-        jTabbedPane3.addTab("4: Change Client's Membership Tier", jTabbedPane19);
-        jTabbedPane3.addTab("5: Add Client's Cars", jTabbedPane20);
-        jTabbedPane3.addTab(" 6: Remove Client's Cars", jTabbedPane21);
-        jTabbedPane3.addTab(" 7: Modify Client's Cars", jTabbedPane22);
-        jTabbedPane3.addTab("8: View Client Info", jTabbedPane23);
-        jTabbedPane3.addTab(" 9: View List of Clients", jTabbedPane24);
-        jTabbedPane3.addTab(" 10: Return to the Main Menu", jTabbedPane25);
+        jTabbedPane3.addTab(" 1: Create Employee", jPanel6);
+        jTabbedPane3.addTab(" 2: Delete Employee", jTabbedPane12);
+        jTabbedPane3.addTab(" 3: Modify Employee", jTabbedPane18);
+        jTabbedPane3.addTab(" 4: View Employee Info", jTabbedPane19);
+        jTabbedPane3.addTab(" 5: View List of Employees", jTabbedPane20);
+        jTabbedPane3.addTab(" 6: Return to the Main Menu", jTabbedPane21);
 
         javax.swing.GroupLayout employeesPanelLayout = new javax.swing.GroupLayout(employeesPanel);
         employeesPanel.setLayout(employeesPanelLayout);
@@ -403,16 +410,19 @@ public class NewJFrame extends javax.swing.JFrame {
             employeesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(employeesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jTabbedPane3)
+                .addGroup(employeesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(employeesPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jTabbedPane3))
+                .addContainerGap())
         );
         employeesPanelLayout.setVerticalGroup(
             employeesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(employeesPanelLayout.createSequentialGroup()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE))
+                .addComponent(jTabbedPane3))
         );
 
         rightCardPanel.add(employeesPanel, "employeesPanel");
@@ -468,7 +478,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(serviceMainTabLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addComponent(serviceChoice)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -484,16 +494,17 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         serviceTabs.addTab("Main - Page", serviceMainTab);
-        serviceTabs.addTab("Create", jTabbedPane1);
-        serviceTabs.addTab("Delete", jTabbedPane4);
-        serviceTabs.addTab("Modify", jTabbedPane6);
-        serviceTabs.addTab("Create Member Tier", jTabbedPane7);
-        serviceTabs.addTab("Delete Member Tier", jTabbedPane8);
-        serviceTabs.addTab("Modify Member Tier", jTabbedPane9);
-        serviceTabs.addTab("View Service Info", jTabbedPane10);
-        serviceTabs.addTab("View List of Services", jTabbedPane11);
-        serviceTabs.addTab("List of Member Tiers", jTabbedPane14);
-        serviceTabs.addTab("Return to the Main Menu", jTabbedPane15);
+        serviceTabs.addTab("1: Create Service", jTabbedPane1);
+        serviceTabs.addTab("2: Delete Service", jTabbedPane4);
+        serviceTabs.addTab("3: Modify Service", jTabbedPane6);
+        serviceTabs.addTab("4: Create Member Tier", jTabbedPane7);
+        serviceTabs.addTab("5: Delete Member Tier", jTabbedPane8);
+        serviceTabs.addTab("6: Modify Member Tier", jTabbedPane9);
+        serviceTabs.addTab("7: View Service Info", jTabbedPane10);
+        serviceTabs.addTab("8: View List of Services", jTabbedPane11);
+        serviceTabs.addTab("9: List of Member Tiers", jTabbedPane14);
+        serviceTabs.addTab("10: List of Member Tiers", jTabbedPane13);
+        serviceTabs.addTab("11: Return to the Main Menu", jTabbedPane15);
 
         javax.swing.GroupLayout servicesPanelLayout = new javax.swing.GroupLayout(servicesPanel);
         servicesPanel.setLayout(servicesPanelLayout);
@@ -670,28 +681,28 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane10;
     private javax.swing.JTabbedPane jTabbedPane11;
+    private javax.swing.JTabbedPane jTabbedPane12;
+    private javax.swing.JTabbedPane jTabbedPane13;
     private javax.swing.JTabbedPane jTabbedPane14;
     private javax.swing.JTabbedPane jTabbedPane15;
-    private javax.swing.JTabbedPane jTabbedPane17;
+    private javax.swing.JTabbedPane jTabbedPane16;
     private javax.swing.JTabbedPane jTabbedPane18;
     private javax.swing.JTabbedPane jTabbedPane19;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane20;
     private javax.swing.JTabbedPane jTabbedPane21;
-    private javax.swing.JTabbedPane jTabbedPane22;
-    private javax.swing.JTabbedPane jTabbedPane23;
-    private javax.swing.JTabbedPane jTabbedPane24;
-    private javax.swing.JTabbedPane jTabbedPane25;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
