@@ -670,6 +670,23 @@ public class Management {
 
     }
 
+    
+    public void createServiceGUI(String n, String d, Double p){
+        
+        services.put(n,new Service(n,p,d));
+        
+    }
+    
+    public void modifyServiceGUI(String n, String nn, String d, Double p){
+        
+        services.remove(n);
+        services.put(nn, new Service(nn,p,d));
+    }
+    
+    public void removeServiceGUI(String n){
+        services.remove(n);
+    }
+    
 
 
 
