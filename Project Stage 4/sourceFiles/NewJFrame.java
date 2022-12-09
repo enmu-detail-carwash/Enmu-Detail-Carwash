@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
 import static javax.swing.ListSelectionModel.SINGLE_SELECTION;
 import javax.swing.table.DefaultTableModel;
 import java.io.*;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -20,6 +22,19 @@ import java.io.*;
  */
 public class NewJFrame extends javax.swing.JFrame {
     public static Management m = new Management();
+     public static final String clientFilename = "clients.csv";
+     public static final String carsFilename = "cars.csv";
+     public static final String appFilename = "appointments.csv";
+     public static final String empFilename = "employees.csv";
+     public static final String salesFilename = "sales.csv";
+     public static final String serviceFilename = "services.csv";
+     public static final String specialClientsFileName = "services.csv";
+     
+     
+     
+     
+     
+    public static final String delimiter = ",";
    
     /**
      * Creates new form NewJFrame
@@ -2106,7 +2121,7 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addComponent(clientChangedModel)
                                 .addComponent(clientChangedMake))))
                     .addComponent(clientsModifyCarsModifyButton))
-                .addContainerGap(395, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
         clientModifyCarsLayout.setVerticalGroup(
             clientModifyCarsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2253,7 +2268,7 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel98)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(clientListName, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         clientClientsListLayout.setVerticalGroup(
             clientClientsListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4338,19 +4353,19 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addGroup(salesListLayout.createSequentialGroup()
                         .addComponent(jLabel138)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(saleServiceName, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(saleServiceName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(salesListLayout.createSequentialGroup()
                         .addComponent(jLabel139)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(saleServicePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(saleServicePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(salesListLayout.createSequentialGroup()
                         .addComponent(jLabel140)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(saleAmountSold, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(saleAmountSold, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(salesListLayout.createSequentialGroup()
                         .addComponent(jLabel141)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(saleTotalMade, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(saleTotalMade, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(509, Short.MAX_VALUE))
         );
         salesListLayout.setVerticalGroup(
@@ -4965,6 +4980,8 @@ public class NewJFrame extends javax.swing.JFrame {
         System.out.println(m.clients.get(name).getName());
         System.out.println(m.clients.get(name).getPhoneNumber());
         System.out.println(m.clients.get(name).getEmail());
+        
+        updateClientCSV();
     }//GEN-LAST:event_clientCreateButtonActionPerformed
 
     private void clientCreateEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientCreateEmailActionPerformed
@@ -6094,7 +6111,7 @@ public class NewJFrame extends javax.swing.JFrame {
     {
         try
         {
-            File file = new File(filename);
+            File file = new File(clientFilename);
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             
@@ -6108,12 +6125,12 @@ public class NewJFrame extends javax.swing.JFrame {
                     System.out.println(field + " ");
                 }
                 
-                int id = Integer.valueOf(tempArr[0]);
-                String name = tempArr[1];
-                int age = Integer.valueOf(tempArr[2]);
-                double salary = Double.valueOf(tempArr[3]);
+                String name = tempArr[0];
+                String pn = tempArr[1];
+                String email = tempArr[2];
                 
-                addCustomer(id, name, age, salary);
+                
+                m.clients.put(name, new Client(name,pn,email));
                 
                 System.out.println();
             }
@@ -6136,24 +6153,22 @@ public class NewJFrame extends javax.swing.JFrame {
 //            
 //            Files.copy(oldFile.toPath(), new_file.toPath());
                     
-            File file = new File(filename);
+            File file = new File(clientFilename);
             BufferedWriter bf = new BufferedWriter(new FileWriter(file));
 
             // Traverese the map of customers and ovewrite the file.
-            HashMap<Integer, Customer> customers = myStore.getCustomers();
-            for (Map.Entry customer : customers.entrySet())
+            Map<String,Client> clientMap = m.clients;
+            for (String key : clientMap.keySet())
             {
                 String row = "";
-                int customerID = (Integer)customer.getKey();
-                Customer cust = myStore.getCustomer(customerID);
+                
 
-                String name = cust.getName();
-                int age = cust.getAge();
-                double salary = cust.getSalary();
+                String name = clientMap.get(key).getName();
+                String pn = clientMap.get(key).getPhoneNumber();
+                String email = clientMap.get(key).getEmail();
 
-                row = String.valueOf(customerID) + "," + name + "," +
-                        String.valueOf(age) + "," + String.valueOf(salary) + 
-                        "\n";
+                row = String.valueOf(name) + "," + pn + "," +
+                        email + "," + "\n";
 
                 System.out.println("New row: " + row);
 
@@ -6202,6 +6217,7 @@ public class NewJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new NewJFrame().setVisible(true);
+                m.createDummyInfo();
             }
         });
     }

@@ -2350,7 +2350,7 @@
                                       </Group>
                                       <Component id="clientsModifyCarsModifyButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="395" max="32767" attributes="0"/>
+                                  <EmptySpace pref="403" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2618,7 +2618,7 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="132" max="32767" attributes="0"/>
+                                  <EmptySpace pref="140" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -5607,22 +5607,22 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel138" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="saleServiceName" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Component id="saleServiceName" min="-2" pref="136" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel139" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="saleServicePrice" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Component id="saleServicePrice" min="-2" pref="163" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel140" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="saleAmountSold" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Component id="saleAmountSold" min="-2" pref="122" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel141" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="saleTotalMade" min="-2" pref="49" max="-2" attributes="0"/>
+                                          <Component id="saleTotalMade" min="-2" pref="157" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace pref="509" max="32767" attributes="0"/>
