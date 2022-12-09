@@ -8,6 +8,9 @@ import java.awt.Color;
 import java.util.Set;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import static javax.swing.ListSelectionModel.SINGLE_SELECTION;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -58,17 +61,54 @@ public class NewJFrame extends javax.swing.JFrame {
         appointmentLabel = new javax.swing.JLabel();
         clientsPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel5 = new javax.swing.JPanel();
-        jTabbedPane17 = new javax.swing.JTabbedPane();
-        jTabbedPane22 = new javax.swing.JTabbedPane();
-        jTabbedPane23 = new javax.swing.JTabbedPane();
-        jTabbedPane24 = new javax.swing.JTabbedPane();
-        jTabbedPane25 = new javax.swing.JTabbedPane();
-        jTabbedPane26 = new javax.swing.JTabbedPane();
-        jTabbedPane27 = new javax.swing.JTabbedPane();
-        jTabbedPane28 = new javax.swing.JTabbedPane();
-        jTabbedPane29 = new javax.swing.JTabbedPane();
+        clientsDeleteTab = new javax.swing.JTabbedPane();
+        clientsCreateTab = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
+        clientCreateName = new javax.swing.JTextField();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        clientCreateEmail = new javax.swing.JTextField();
+        clientCreateButton = new javax.swing.JButton();
+        clientCreatePN = new javax.swing.JTextField();
+        clientsModifyTab = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        clientsModifyChangedPN = new javax.swing.JTextField();
+        clientsModifyButton = new javax.swing.JButton();
+        clientsModifyDropDown = new javax.swing.JComboBox<>();
+        clientsModifySelectButton = new javax.swing.JButton();
+        jLabel52 = new javax.swing.JLabel();
+        clientsModifySelection = new javax.swing.JLabel();
+        clientsModifySelectionName = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        clientsModifySelectionPN = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel55 = new javax.swing.JLabel();
+        clientsModifyChangedName = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
+        lastClientModified = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        clientsModifySelectionEmail = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        clientsModifyChangedEmail = new javax.swing.JTextField();
+        serviceDeleteTab1 = new javax.swing.JPanel();
+        clientsDeleteDropDown = new javax.swing.JComboBox<>();
+        jLabel53 = new javax.swing.JLabel();
+        clientsDeleteSelectButton = new javax.swing.JButton();
+        jLabel56 = new javax.swing.JLabel();
+        clientsDeleteSelection = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        clientsDeleteName = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        clientsDeletePN = new javax.swing.JLabel();
+        clientsDeleteButton = new javax.swing.JButton();
+        jLabel63 = new javax.swing.JLabel();
+        clientsDeleteVerifyName = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        lastDeletedClient = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        clientsDeleteEmail = new javax.swing.JLabel();
         employeesPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
@@ -84,15 +124,6 @@ public class NewJFrame extends javax.swing.JFrame {
         servicesPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         serviceTabs = new javax.swing.JTabbedPane();
-        serviceMainTab = new javax.swing.JPanel();
-        serviceChoice = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        serviceListOptions = new javax.swing.JList<>();
-        selectOption = new javax.swing.JLabel();
-        invalidOption = new javax.swing.JLabel();
-        serviceEnterNumber = new java.awt.TextField();
-        serviceMessage = new javax.swing.JLabel();
         serviceCreateTab = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         serviceName = new javax.swing.JTextField();
@@ -126,6 +157,85 @@ public class NewJFrame extends javax.swing.JFrame {
         serviceModifiedDescription = new javax.swing.JTextArea();
         jLabel17 = new javax.swing.JLabel();
         lastServiceModified = new javax.swing.JLabel();
+        serviceDeleteTab = new javax.swing.JPanel();
+        serviceDropDown1 = new javax.swing.JComboBox<>();
+        jLabel18 = new javax.swing.JLabel();
+        serviceDeleteSelectButton = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        serviceDeleteSelectionLabel = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        serviceDeleteNameLabel = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        serviceDeleteDescriptionLabel = new javax.swing.JTextArea();
+        jLabel24 = new javax.swing.JLabel();
+        serviceDeletePriceLabel = new javax.swing.JLabel();
+        serviceDeleteDeleteButton = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        serviceDeleteVerifyNameLabel = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        serviceDeleteLastServiceDeleted = new javax.swing.JLabel();
+        serviceCreateMemberTierTab = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        serviceCreateMembName = new javax.swing.JTextField();
+        serviceCreateMembDiscount = new javax.swing.JTextField();
+        serviceCreateMembCreateButton = new javax.swing.JButton();
+        serviceModifyMemberTierTab = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        serviceModifyMembChangedDiscount = new javax.swing.JTextField();
+        serviceModifyMembButton = new javax.swing.JButton();
+        serviceDropDownMemberModify = new javax.swing.JComboBox<>();
+        serviceModifyMemberTierSelect = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        serviceModifyMembSelection = new javax.swing.JLabel();
+        serviceModifyMembNameLabel = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel33 = new javax.swing.JLabel();
+        serviceModifyMembChangedName = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        lastMembershipModifiedLable = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        serviceModifyMembDiscountLabel = new javax.swing.JLabel();
+        serviceDeleteMemberTierTab = new javax.swing.JPanel();
+        serviceDropDownMemberDelete = new javax.swing.JComboBox<>();
+        jLabel31 = new javax.swing.JLabel();
+        serviceDeleteMembSelect = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
+        serviceDeleteMembSelection = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        serviceDeleteMembName = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        serviceDeleteMembDiscount = new javax.swing.JLabel();
+        serviceDeleteMembDeleteButton = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
+        serviceDeleteMembVerifyName = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        serviceDeleteLastMembershipDeleted = new javax.swing.JLabel();
+        serviceServicesList = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        serviceList = new javax.swing.JList<>();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        serviceListSelectionName = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        servicesListSelectionDescription = new javax.swing.JTextArea();
+        jLabel43 = new javax.swing.JLabel();
+        serviceListSelectionPrice = new javax.swing.JLabel();
+        serviceListSearchInput = new javax.swing.JTextField();
+        serviceListSearchButton = new javax.swing.JButton();
+        serviceMemberTiersList = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        serviceListMemb = new javax.swing.JList<>();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        serviceListMembName = new javax.swing.JLabel();
+        serviceListMembDiscount = new javax.swing.JLabel();
+        serviceListMembInput = new javax.swing.JTextField();
+        serviceListMembSearchButton = new javax.swing.JButton();
         salesPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jTabbedPane5 = new javax.swing.JTabbedPane();
@@ -363,29 +473,460 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel2.setText("Clients");
 
-        jTabbedPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
+        clientsDeleteTab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 804, Short.MAX_VALUE)
+        jLabel46.setText("Enter the name of the new Client:");
+
+        clientCreateName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientCreateNameActionPerformed(evt);
+            }
+        });
+
+        jLabel47.setText("Enter the Phone Number of the new Client: ");
+
+        jLabel48.setText("Enter the e-mail of the new Client:");
+
+        clientCreateEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientCreateEmailActionPerformed(evt);
+            }
+        });
+
+        clientCreateButton.setText("Create New Client");
+        clientCreateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientCreateButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout clientsCreateTabLayout = new javax.swing.GroupLayout(clientsCreateTab);
+        clientsCreateTab.setLayout(clientsCreateTabLayout);
+        clientsCreateTabLayout.setHorizontalGroup(
+            clientsCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clientsCreateTabLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(clientsCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(clientCreateButton)
+                    .addGroup(clientsCreateTabLayout.createSequentialGroup()
+                        .addGroup(clientsCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel47)
+                            .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(clientsCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(clientCreateEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clientCreatePN, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(clientCreateName, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(330, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+        clientsCreateTabLayout.setVerticalGroup(
+            clientsCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clientsCreateTabLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(clientsCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel46)
+                    .addComponent(clientCreateName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(clientsCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(clientCreatePN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(clientsCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel48)
+                    .addComponent(clientCreateEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(clientCreateButton)
+                .addContainerGap(425, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("1: Create Client", jPanel5);
-        jTabbedPane2.addTab(" 2: Delete Client", jTabbedPane17);
-        jTabbedPane2.addTab(" 3: Modify Client", jTabbedPane22);
-        jTabbedPane2.addTab(" 4: Change Client's Membership tier", jTabbedPane23);
-        jTabbedPane2.addTab(" 5: Add Client's Cars", jTabbedPane24);
-        jTabbedPane2.addTab(" 6: Remove Client's Cars", jTabbedPane25);
-        jTabbedPane2.addTab("7: Modify Client's Cars", jTabbedPane26);
-        jTabbedPane2.addTab(" 8: View Client Info", jTabbedPane27);
-        jTabbedPane2.addTab("9: View List of Clients", jTabbedPane28);
-        jTabbedPane2.addTab("10: Return to the Main Menu", jTabbedPane29);
+        clientsDeleteTab.addTab("Create", clientsCreateTab);
+
+        jLabel49.setText("Choose the Client you want to modify");
+
+        jLabel50.setText("Name:");
+
+        jLabel51.setText("Changed Phone Number:");
+
+        clientsModifyChangedPN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsModifyChangedPNActionPerformed(evt);
+            }
+        });
+
+        clientsModifyButton.setText("Modify Client");
+        clientsModifyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsModifyButtonActionPerformed(evt);
+            }
+        });
+
+        clientsModifyDropDown.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                clientsModifyDropDownItemStateChanged(evt);
+            }
+        });
+        clientsModifyDropDown.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                clientsModifyDropDownFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                clientsModifyDropDownFocusLost(evt);
+            }
+        });
+        clientsModifyDropDown.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clientsModifyDropDownMouseClicked(evt);
+            }
+        });
+        clientsModifyDropDown.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                clientsModifyDropDownInputMethodTextChanged(evt);
+            }
+        });
+        clientsModifyDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsModifyDropDownActionPerformed(evt);
+            }
+        });
+        clientsModifyDropDown.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                clientsModifyDropDownPropertyChange(evt);
+            }
+        });
+
+        clientsModifySelectButton.setText("Select");
+        clientsModifySelectButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsModifySelectButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel52.setText("You have chosen");
+
+        clientsModifySelection.setText("(selection)");
+        clientsModifySelection.setName(""); // NOI18N
+
+        clientsModifySelectionName.setText("None");
+
+        jLabel54.setText("Phone Number:");
+
+        clientsModifySelectionPN.setText("None");
+
+        jLabel55.setText("Changed Name:");
+
+        clientsModifyChangedName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsModifyChangedNameActionPerformed(evt);
+            }
+        });
+
+        jLabel57.setText("Last Client Modified:");
+
+        lastClientModified.setText("None");
+
+        jLabel58.setText("E-mail:");
+
+        clientsModifySelectionEmail.setText("None");
+
+        jLabel60.setText("Changed E-mail:");
+
+        clientsModifyChangedEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsModifyChangedEmailActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout clientsModifyTabLayout = new javax.swing.GroupLayout(clientsModifyTab);
+        clientsModifyTab.setLayout(clientsModifyTabLayout);
+        clientsModifyTabLayout.setHorizontalGroup(
+            clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator3)
+                            .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                .addComponent(jLabel52)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(clientsModifySelection, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                        .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(clientsModifyButton)
+                            .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                    .addGap(19, 19, 19)
+                                    .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                            .addComponent(clientsModifyDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(clientsModifySelectButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                            .addComponent(jLabel50)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(clientsModifySelectionName, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                            .addComponent(jLabel54)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(clientsModifySelectionPN, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                            .addComponent(jLabel58)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(clientsModifySelectionEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                            .addComponent(jLabel55)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(clientsModifyChangedName, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                            .addComponent(jLabel51)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(clientsModifyChangedPN))))
+                                .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(jLabel60)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(clientsModifyChangedEmail))))
+                        .addGap(0, 348, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel57)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lastClientModified, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        clientsModifyTabLayout.setVerticalGroup(
+            clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clientsModifyTabLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clientsModifyDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clientsModifySelectButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(clientsModifySelectionName))
+                .addGap(18, 18, 18)
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(clientsModifySelectionPN))
+                .addGap(18, 18, 18)
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel58)
+                    .addComponent(clientsModifySelectionEmail))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(clientsModifySelection))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(clientsModifyChangedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(clientsModifyChangedPN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60)
+                    .addComponent(clientsModifyChangedEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addComponent(clientsModifyButton)
+                .addGap(18, 18, 18)
+                .addGroup(clientsModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel57)
+                    .addComponent(lastClientModified))
+                .addContainerGap(192, Short.MAX_VALUE))
+        );
+
+        clientsDeleteTab.addTab("Modify", clientsModifyTab);
+
+        serviceDeleteTab1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                serviceDeleteTab1MouseMoved(evt);
+            }
+        });
+        serviceDeleteTab1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceDeleteTab1FocusGained(evt);
+            }
+        });
+        serviceDeleteTab1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                serviceDeleteTab1MouseClicked(evt);
+            }
+        });
+
+        clientsDeleteDropDown.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                clientsDeleteDropDownFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                clientsDeleteDropDownFocusLost(evt);
+            }
+        });
+        clientsDeleteDropDown.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clientsDeleteDropDownMouseClicked(evt);
+            }
+        });
+        clientsDeleteDropDown.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                clientsDeleteDropDownInputMethodTextChanged(evt);
+            }
+        });
+        clientsDeleteDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsDeleteDropDownActionPerformed(evt);
+            }
+        });
+        clientsDeleteDropDown.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                clientsDeleteDropDownPropertyChange(evt);
+            }
+        });
+
+        jLabel53.setText("Choose the Client you want to delete");
+
+        clientsDeleteSelectButton.setText("Select");
+        clientsDeleteSelectButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                clientsDeleteSelectButtonFocusGained(evt);
+            }
+        });
+        clientsDeleteSelectButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsDeleteSelectButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel56.setText("You have chosen");
+
+        clientsDeleteSelection.setText("(selection)");
+
+        jLabel59.setText("Name:");
+
+        clientsDeleteName.setText("None");
+
+        jLabel62.setText("Phone Number:");
+
+        clientsDeletePN.setText("None");
+
+        clientsDeleteButton.setText("Delete");
+        clientsDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsDeleteButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel63.setText("Do you want to delete");
+
+        clientsDeleteVerifyName.setText("(selection)?");
+
+        jLabel64.setText("Last Client Deleted:");
+
+        lastDeletedClient.setText("none");
+
+        jLabel65.setText("E-mail:");
+
+        clientsDeleteEmail.setText("None");
+
+        javax.swing.GroupLayout serviceDeleteTab1Layout = new javax.swing.GroupLayout(serviceDeleteTab1);
+        serviceDeleteTab1.setLayout(serviceDeleteTab1Layout);
+        serviceDeleteTab1Layout.setHorizontalGroup(
+            serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceDeleteTab1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(serviceDeleteTab1Layout.createSequentialGroup()
+                        .addComponent(jLabel64)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lastDeletedClient, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceDeleteTab1Layout.createSequentialGroup()
+                        .addComponent(jLabel63)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clientsDeleteVerifyName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceDeleteTab1Layout.createSequentialGroup()
+                        .addComponent(jLabel62)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(clientsDeletePN, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(serviceDeleteTab1Layout.createSequentialGroup()
+                            .addComponent(clientsDeleteDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(clientsDeleteSelectButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel53)
+                        .addGroup(serviceDeleteTab1Layout.createSequentialGroup()
+                            .addComponent(jLabel56)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(clientsDeleteSelection))
+                        .addGroup(serviceDeleteTab1Layout.createSequentialGroup()
+                            .addComponent(jLabel59)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(clientsDeleteName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, serviceDeleteTab1Layout.createSequentialGroup()
+                            .addComponent(jLabel65)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(clientsDeleteEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, serviceDeleteTab1Layout.createSequentialGroup()
+                            .addGap(201, 201, 201)
+                            .addComponent(clientsDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(445, Short.MAX_VALUE))
+        );
+        serviceDeleteTab1Layout.setVerticalGroup(
+            serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceDeleteTab1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clientsDeleteDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clientsDeleteSelectButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(clientsDeleteSelection))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel59)
+                    .addComponent(clientsDeleteName))
+                .addGap(18, 18, 18)
+                .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel62)
+                    .addComponent(clientsDeletePN))
+                .addGap(18, 18, 18)
+                .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel65)
+                    .addComponent(clientsDeleteEmail))
+                .addGap(32, 32, 32)
+                .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel63)
+                    .addComponent(clientsDeleteVerifyName))
+                .addGap(31, 31, 31)
+                .addComponent(clientsDeleteButton)
+                .addGap(18, 18, 18)
+                .addGroup(serviceDeleteTab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel64)
+                    .addComponent(lastDeletedClient))
+                .addContainerGap(268, Short.MAX_VALUE))
+        );
+
+        clientsDeleteTab.addTab("Delete", serviceDeleteTab1);
 
         javax.swing.GroupLayout clientsPanelLayout = new javax.swing.GroupLayout(clientsPanel);
         clientsPanel.setLayout(clientsPanelLayout);
@@ -395,14 +936,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jTabbedPane2)
+            .addComponent(clientsDeleteTab)
         );
         clientsPanelLayout.setVerticalGroup(
             clientsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(clientsPanelLayout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane2))
+                .addComponent(clientsDeleteTab))
         );
 
         rightCardPanel.add(clientsPanel, "clientsPanel");
@@ -478,67 +1019,6 @@ public class NewJFrame extends javax.swing.JFrame {
 
         serviceTabs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
 
-        serviceChoice.setText("What would you like to do?");
-
-        serviceListOptions.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "1: Create Service", "2: Delete Service", "3: Modify Service", "4: Create Member Tier", "5: Delete Member Tier", "6: Modify Member Tier", "7: View Service Info", "8: View List of Services", "9: View Member Tier Info", "10: List of Member Tiers", "11: Return to the Main Menu" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(serviceListOptions);
-
-        selectOption.setText("To select an option, enter the corresponding number:  1-11");
-
-        invalidOption.setText("You entered an invalid option. Please try again: ");
-
-        serviceEnterNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                serviceEnterNumberActionPerformed(evt);
-            }
-        });
-
-        serviceMessage.setText("If you enter a number outside of : 1-11  It will prompt an error message.");
-
-        javax.swing.GroupLayout serviceMainTabLayout = new javax.swing.GroupLayout(serviceMainTab);
-        serviceMainTab.setLayout(serviceMainTabLayout);
-        serviceMainTabLayout.setHorizontalGroup(
-            serviceMainTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(serviceMainTabLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(serviceMainTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(serviceMainTabLayout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(serviceEnterNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(invalidOption, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(serviceMessage)
-                    .addComponent(selectOption)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(serviceChoice))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        serviceMainTabLayout.setVerticalGroup(
-            serviceMainTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(serviceMainTabLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(serviceChoice)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(selectOption, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(serviceEnterNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(serviceMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(invalidOption, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
-        );
-
-        serviceTabs.addTab("Main", serviceMainTab);
-
         jLabel6.setText("Enter the name of the new service: ");
 
         serviceName.addActionListener(new java.awt.event.ActionListener() {
@@ -565,6 +1045,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         serviceDescription.setColumns(20);
+        serviceDescription.setLineWrap(true);
         serviceDescription.setRows(5);
         jScrollPane2.setViewportView(serviceDescription);
 
@@ -574,31 +1055,31 @@ public class NewJFrame extends javax.swing.JFrame {
             serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(serviceCreateTabLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(serviceCreateTabLayout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(servicePrice))
                     .addGroup(serviceCreateTabLayout.createSequentialGroup()
                         .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(serviceName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(serviceCreateButton)
-                            .addGroup(serviceCreateTabLayout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(servicePrice, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(serviceName))
+                    .addComponent(jScrollPane2)
+                    .addGroup(serviceCreateTabLayout.createSequentialGroup()
+                        .addGap(301, 301, 301)
+                        .addComponent(serviceCreateButton)))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
         serviceCreateTabLayout.setVerticalGroup(
             serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(serviceCreateTabLayout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(serviceName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
+                .addGap(11, 11, 11)
+                .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(serviceName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -606,9 +1087,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(serviceCreateTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(servicePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(92, 92, 92)
+                .addGap(30, 30, 30)
                 .addComponent(serviceCreateButton)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(332, Short.MAX_VALUE))
         );
 
         serviceTabs.addTab("Create", serviceCreateTab);
@@ -634,13 +1115,22 @@ public class NewJFrame extends javax.swing.JFrame {
 
         serviceModifySelectionDescription.setEditable(false);
         serviceModifySelectionDescription.setColumns(20);
+        serviceModifySelectionDescription.setLineWrap(true);
         serviceModifySelectionDescription.setRows(5);
         serviceModifySelectionDescription.setText("None");
         jScrollPane6.setViewportView(serviceModifySelectionDescription);
 
+        serviceDropDown.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                serviceDropDownItemStateChanged(evt);
+            }
+        });
         serviceDropDown.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 serviceDropDownFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serviceDropDownFocusLost(evt);
             }
         });
         serviceDropDown.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -697,6 +1187,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel16.setText("Changed Description:");
 
         serviceModifiedDescription.setColumns(20);
+        serviceModifiedDescription.setLineWrap(true);
         serviceModifiedDescription.setRows(5);
         jScrollPane7.setViewportView(serviceModifiedDescription);
 
@@ -714,55 +1205,47 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jSeparator1))
                     .addGroup(serviceModifyTabLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
                         .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(serviceModifyTabLayout.createSequentialGroup()
+                                .addComponent(serviceDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(serviceModifyTabLayout.createSequentialGroup()
-                                        .addComponent(jLabel15)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(serviceModifySelectionPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(serviceSelectModify, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(serviceModifyTabLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(serviceModifyTabLayout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(serviceModifySelectionName, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(serviceModifyTabLayout.createSequentialGroup()
-                                        .addComponent(jLabel12)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(serviceModifySelectionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(serviceModifyTabLayout.createSequentialGroup()
-                                        .addComponent(serviceDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(serviceSelectModify, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(serviceModifyTabLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(serviceModifySelectionName, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(serviceModifyTabLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(serviceModifySelectionPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(serviceModifyTabLayout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addComponent(jLabel16))
+                            .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(serviceModifyTabLayout.createSequentialGroup()
+                                    .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel14)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(serviceModifiedName))
-                                    .addComponent(jLabel16)
-                                    .addComponent(jScrollPane7)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, serviceModifyTabLayout.createSequentialGroup()
-                                        .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, serviceModifyTabLayout.createSequentialGroup()
-                                                .addComponent(jLabel17)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(lastServiceModified, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(serviceModifyTabLayout.createSequentialGroup()
-                                                .addComponent(jLabel11)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(serviceModifiedPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(150, 150, 150)))))
-                        .addGap(0, 344, Short.MAX_VALUE)))
+                                        .addComponent(jLabel12))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(serviceModifySelectionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(serviceModifiedName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(serviceModifyButton))
+                            .addGroup(serviceModifyTabLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(serviceModifiedPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(serviceModifyTabLayout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lastServiceModified, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(serviceModifyTabLayout.createSequentialGroup()
-                .addGap(328, 328, 328)
-                .addComponent(serviceModifyButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         serviceModifyTabLayout.setVerticalGroup(
             serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -773,11 +1256,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(serviceDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(serviceSelectModify))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(serviceModifySelectionLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(serviceModifySelectionName))
@@ -787,32 +1266,794 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(serviceModifySelectionPrice)
-                    .addComponent(jLabel15))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel15)
+                    .addComponent(serviceModifySelectionPrice))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(serviceModifySelectionLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(serviceModifiedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(serviceModifiedPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
                 .addComponent(serviceModifyButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(serviceModifyTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(lastServiceModified))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         serviceTabs.addTab("Modify", serviceModifyTab);
+
+        serviceDeleteTab.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                serviceDeleteTabMouseMoved(evt);
+            }
+        });
+        serviceDeleteTab.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceDeleteTabFocusGained(evt);
+            }
+        });
+        serviceDeleteTab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                serviceDeleteTabMouseClicked(evt);
+            }
+        });
+
+        serviceDropDown1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceDropDown1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serviceDropDown1FocusLost(evt);
+            }
+        });
+        serviceDropDown1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                serviceDropDown1MouseClicked(evt);
+            }
+        });
+        serviceDropDown1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                serviceDropDown1InputMethodTextChanged(evt);
+            }
+        });
+        serviceDropDown1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceDropDown1ActionPerformed(evt);
+            }
+        });
+        serviceDropDown1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                serviceDropDown1PropertyChange(evt);
+            }
+        });
+
+        jLabel18.setText("Choose the service you want to delete");
+
+        serviceDeleteSelectButton.setText("Select");
+        serviceDeleteSelectButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceDeleteSelectButtonFocusGained(evt);
+            }
+        });
+        serviceDeleteSelectButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceDeleteSelectButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("You have chosen");
+
+        serviceDeleteSelectionLabel.setText("(selection)");
+
+        jLabel21.setText("Name:");
+
+        serviceDeleteNameLabel.setText("None");
+
+        jLabel23.setText("Description:");
+
+        serviceDeleteDescriptionLabel.setColumns(20);
+        serviceDeleteDescriptionLabel.setLineWrap(true);
+        serviceDeleteDescriptionLabel.setRows(5);
+        jScrollPane8.setViewportView(serviceDeleteDescriptionLabel);
+
+        jLabel24.setText("Price:");
+
+        serviceDeletePriceLabel.setText("None");
+
+        serviceDeleteDeleteButton.setText("Delete");
+        serviceDeleteDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceDeleteDeleteButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setText("Do you want to delete");
+
+        serviceDeleteVerifyNameLabel.setText("(selection)?");
+
+        jLabel22.setText("Last Service Deleted:");
+
+        serviceDeleteLastServiceDeleted.setText("none");
+
+        javax.swing.GroupLayout serviceDeleteTabLayout = new javax.swing.GroupLayout(serviceDeleteTab);
+        serviceDeleteTab.setLayout(serviceDeleteTabLayout);
+        serviceDeleteTabLayout.setHorizontalGroup(
+            serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceDeleteTabLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(serviceDeleteTabLayout.createSequentialGroup()
+                            .addComponent(serviceDropDown1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(serviceDeleteSelectButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel18)
+                        .addGroup(serviceDeleteTabLayout.createSequentialGroup()
+                            .addComponent(jLabel19)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(serviceDeleteSelectionLabel))
+                        .addGroup(serviceDeleteTabLayout.createSequentialGroup()
+                            .addComponent(jLabel21)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(serviceDeleteNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel23))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(serviceDeleteDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, serviceDeleteTabLayout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(serviceDeleteVerifyNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(serviceDeleteTabLayout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(serviceDeletePriceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, serviceDeleteTabLayout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(serviceDeleteLastServiceDeleted, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(336, Short.MAX_VALUE))
+        );
+        serviceDeleteTabLayout.setVerticalGroup(
+            serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceDeleteTabLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(serviceDropDown1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(serviceDeleteSelectButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(serviceDeleteSelectionLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(serviceDeleteNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(serviceDeletePriceLabel))
+                .addGap(18, 18, 18)
+                .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(serviceDeleteVerifyNameLabel))
+                .addGap(5, 5, 5)
+                .addComponent(serviceDeleteDeleteButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceDeleteTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(serviceDeleteLastServiceDeleted))
+                .addContainerGap(216, Short.MAX_VALUE))
+        );
+
+        serviceTabs.addTab("Delete", serviceDeleteTab);
+
+        serviceCreateMemberTierTab.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                serviceCreateMemberTierTabMouseMoved(evt);
+            }
+        });
+        serviceCreateMemberTierTab.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceCreateMemberTierTabFocusGained(evt);
+            }
+        });
+        serviceCreateMemberTierTab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                serviceCreateMemberTierTabMouseClicked(evt);
+            }
+        });
+
+        jLabel25.setText("Enter the name of the new Member Tier");
+
+        jLabel26.setText("Enter the discount that this Member Tier will apply:");
+
+        serviceCreateMembName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceCreateMembNameActionPerformed(evt);
+            }
+        });
+
+        serviceCreateMembCreateButton.setText("Create");
+        serviceCreateMembCreateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceCreateMembCreateButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout serviceCreateMemberTierTabLayout = new javax.swing.GroupLayout(serviceCreateMemberTierTab);
+        serviceCreateMemberTierTab.setLayout(serviceCreateMemberTierTabLayout);
+        serviceCreateMemberTierTabLayout.setHorizontalGroup(
+            serviceCreateMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceCreateMemberTierTabLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(serviceCreateMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(serviceCreateMembCreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(serviceCreateMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(serviceCreateMemberTierTabLayout.createSequentialGroup()
+                            .addComponent(jLabel25)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(serviceCreateMembName))
+                        .addGroup(serviceCreateMemberTierTabLayout.createSequentialGroup()
+                            .addComponent(jLabel26)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(serviceCreateMembDiscount, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))))
+                .addContainerGap(336, Short.MAX_VALUE))
+        );
+        serviceCreateMemberTierTabLayout.setVerticalGroup(
+            serviceCreateMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceCreateMemberTierTabLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(serviceCreateMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(serviceCreateMembName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(serviceCreateMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(serviceCreateMembDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addComponent(serviceCreateMembCreateButton)
+                .addContainerGap(462, Short.MAX_VALUE))
+        );
+
+        serviceTabs.addTab("Create Member Tier", serviceCreateMemberTierTab);
+
+        jLabel27.setText("Choose the Member Tier you want to modify");
+
+        jLabel28.setText("Name:");
+
+        jLabel29.setText("Changed Discount:");
+
+        serviceModifyMembChangedDiscount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceModifyMembChangedDiscountActionPerformed(evt);
+            }
+        });
+
+        serviceModifyMembButton.setText("Modify Membership");
+        serviceModifyMembButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceModifyMembButtonActionPerformed(evt);
+            }
+        });
+
+        serviceDropDownMemberModify.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                serviceDropDownMemberModifyItemStateChanged(evt);
+            }
+        });
+        serviceDropDownMemberModify.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceDropDownMemberModifyFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serviceDropDownMemberModifyFocusLost(evt);
+            }
+        });
+        serviceDropDownMemberModify.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                serviceDropDownMemberModifyMouseClicked(evt);
+            }
+        });
+        serviceDropDownMemberModify.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                serviceDropDownMemberModifyInputMethodTextChanged(evt);
+            }
+        });
+        serviceDropDownMemberModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceDropDownMemberModifyActionPerformed(evt);
+            }
+        });
+        serviceDropDownMemberModify.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                serviceDropDownMemberModifyPropertyChange(evt);
+            }
+        });
+
+        serviceModifyMemberTierSelect.setText("Select");
+        serviceModifyMemberTierSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceModifyMemberTierSelectActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText("You have chosen");
+
+        serviceModifyMembSelection.setText("(selection)");
+        serviceModifyMembSelection.setName(""); // NOI18N
+
+        serviceModifyMembNameLabel.setText("None");
+
+        jLabel33.setText("Changed Name:");
+
+        serviceModifyMembChangedName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceModifyMembChangedNameActionPerformed(evt);
+            }
+        });
+
+        jLabel35.setText("Last Service Modified:");
+
+        lastMembershipModifiedLable.setText("None");
+
+        jLabel36.setText("Discount Applied:");
+
+        serviceModifyMembDiscountLabel.setText("None");
+
+        javax.swing.GroupLayout serviceModifyMemberTierTabLayout = new javax.swing.GroupLayout(serviceModifyMemberTierTab);
+        serviceModifyMemberTierTab.setLayout(serviceModifyMemberTierTabLayout);
+        serviceModifyMemberTierTabLayout.setHorizontalGroup(
+            serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceModifyMemberTierTabLayout.createSequentialGroup()
+                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(serviceModifyMemberTierTabLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator2))
+                    .addGroup(serviceModifyMemberTierTabLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(serviceModifyMemberTierTabLayout.createSequentialGroup()
+                                .addComponent(jLabel28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(serviceModifyMembNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(serviceModifyMemberTierTabLayout.createSequentialGroup()
+                                .addComponent(serviceDropDownMemberModify, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(serviceModifyMemberTierSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(serviceModifyMemberTierTabLayout.createSequentialGroup()
+                                .addComponent(jLabel36)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(serviceModifyMembDiscountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(serviceModifyMemberTierTabLayout.createSequentialGroup()
+                                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel33)
+                                    .addComponent(jLabel30))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(serviceModifyMembChangedDiscount, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                                    .addComponent(serviceModifyMembChangedName)
+                                    .addComponent(serviceModifyMembSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, serviceModifyMemberTierTabLayout.createSequentialGroup()
+                                .addComponent(jLabel35)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lastMembershipModifiedLable, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(150, 150, 150))
+                            .addComponent(serviceModifyMembButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 336, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        serviceModifyMemberTierTabLayout.setVerticalGroup(
+            serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceModifyMemberTierTabLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(serviceDropDownMemberModify, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(serviceModifyMemberTierSelect))
+                .addGap(40, 40, 40)
+                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(serviceModifyMembNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(serviceModifyMembDiscountLabel))
+                .addGap(100, 100, 100)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(serviceModifyMembSelection))
+                .addGap(18, 18, 18)
+                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(serviceModifyMembChangedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(serviceModifyMembChangedDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(serviceModifyMembButton)
+                .addGap(34, 34, 34)
+                .addGroup(serviceModifyMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(lastMembershipModifiedLable))
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        serviceTabs.addTab("Modify Member Tier", serviceModifyMemberTierTab);
+
+        serviceDeleteMemberTierTab.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                serviceDeleteMemberTierTabMouseMoved(evt);
+            }
+        });
+        serviceDeleteMemberTierTab.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceDeleteMemberTierTabFocusGained(evt);
+            }
+        });
+        serviceDeleteMemberTierTab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                serviceDeleteMemberTierTabMouseClicked(evt);
+            }
+        });
+
+        serviceDropDownMemberDelete.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceDropDownMemberDeleteFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serviceDropDownMemberDeleteFocusLost(evt);
+            }
+        });
+        serviceDropDownMemberDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                serviceDropDownMemberDeleteMouseClicked(evt);
+            }
+        });
+        serviceDropDownMemberDelete.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                serviceDropDownMemberDeleteInputMethodTextChanged(evt);
+            }
+        });
+        serviceDropDownMemberDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceDropDownMemberDeleteActionPerformed(evt);
+            }
+        });
+        serviceDropDownMemberDelete.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                serviceDropDownMemberDeletePropertyChange(evt);
+            }
+        });
+
+        jLabel31.setText("Choose the Membership Tier you want to delete");
+
+        serviceDeleteMembSelect.setText("Select");
+        serviceDeleteMembSelect.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceDeleteMembSelectFocusGained(evt);
+            }
+        });
+        serviceDeleteMembSelect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceDeleteMembSelectActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setText("You have chosen");
+
+        serviceDeleteMembSelection.setText("(selection)");
+
+        jLabel34.setText("Name:");
+
+        serviceDeleteMembName.setText("None");
+
+        jLabel38.setText("Discount:");
+
+        serviceDeleteMembDiscount.setText("None");
+
+        serviceDeleteMembDeleteButton.setText("Delete");
+        serviceDeleteMembDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceDeleteMembDeleteButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel39.setText("Do you want to delete");
+
+        serviceDeleteMembVerifyName.setText("(selection)?");
+
+        jLabel40.setText("Last Membership Tier Deleted:");
+
+        serviceDeleteLastMembershipDeleted.setText("none");
+
+        javax.swing.GroupLayout serviceDeleteMemberTierTabLayout = new javax.swing.GroupLayout(serviceDeleteMemberTierTab);
+        serviceDeleteMemberTierTab.setLayout(serviceDeleteMemberTierTabLayout);
+        serviceDeleteMemberTierTabLayout.setHorizontalGroup(
+            serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceDeleteMemberTierTabLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(serviceDeleteMemberTierTabLayout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(serviceDeleteLastMembershipDeleted, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceDeleteMemberTierTabLayout.createSequentialGroup()
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(serviceDeleteMembVerifyName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceDeleteMemberTierTabLayout.createSequentialGroup()
+                        .addComponent(jLabel38)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(serviceDeleteMembDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(serviceDeleteMemberTierTabLayout.createSequentialGroup()
+                            .addComponent(serviceDropDownMemberDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(serviceDeleteMembSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel31)
+                        .addGroup(serviceDeleteMemberTierTabLayout.createSequentialGroup()
+                            .addComponent(jLabel32)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(serviceDeleteMembSelection))
+                        .addGroup(serviceDeleteMemberTierTabLayout.createSequentialGroup()
+                            .addComponent(jLabel34)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(serviceDeleteMembName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(serviceDeleteMemberTierTabLayout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addComponent(serviceDeleteMembDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(448, Short.MAX_VALUE))
+        );
+        serviceDeleteMemberTierTabLayout.setVerticalGroup(
+            serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceDeleteMemberTierTabLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(serviceDropDownMemberDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(serviceDeleteMembSelect))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(serviceDeleteMembSelection))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(serviceDeleteMembName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(serviceDeleteMembDiscount))
+                .addGap(18, 18, 18)
+                .addGroup(serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(serviceDeleteMembVerifyName))
+                .addGap(18, 18, 18)
+                .addComponent(serviceDeleteMembDeleteButton)
+                .addGap(18, 18, 18)
+                .addGroup(serviceDeleteMemberTierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel40)
+                    .addComponent(serviceDeleteLastMembershipDeleted))
+                .addContainerGap(335, Short.MAX_VALUE))
+        );
+
+        serviceTabs.addTab("Delete Member Tier", serviceDeleteMemberTierTab);
+
+        serviceList.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        serviceList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        serviceList.setRequestFocusEnabled(false);
+        serviceList.setVerifyInputWhenFocusTarget(false);
+        serviceList.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceListFocusGained(evt);
+            }
+        });
+        serviceList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                serviceListValueChanged(evt);
+            }
+        });
+        jScrollPane3.setViewportView(serviceList);
+
+        jLabel41.setText("Name:");
+
+        serviceListSelectionName.setText("None");
+
+        jLabel42.setText("Description:");
+
+        servicesListSelectionDescription.setColumns(20);
+        servicesListSelectionDescription.setLineWrap(true);
+        servicesListSelectionDescription.setRows(5);
+        jScrollPane4.setViewportView(servicesListSelectionDescription);
+
+        jLabel43.setText("Price:");
+
+        serviceListSelectionPrice.setText("None");
+
+        serviceListSearchInput.setText("(service)");
+
+        serviceListSearchButton.setText("Search");
+        serviceListSearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceListSearchButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout serviceServicesListLayout = new javax.swing.GroupLayout(serviceServicesList);
+        serviceServicesList.setLayout(serviceServicesListLayout);
+        serviceServicesListLayout.setHorizontalGroup(
+            serviceServicesListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceServicesListLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceServicesListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel42)
+                    .addGroup(serviceServicesListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(serviceServicesListLayout.createSequentialGroup()
+                            .addComponent(serviceListSearchInput)
+                            .addGap(18, 18, 18)
+                            .addComponent(serviceListSearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceServicesListLayout.createSequentialGroup()
+                        .addComponent(jLabel41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(serviceListSelectionName, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceServicesListLayout.createSequentialGroup()
+                        .addComponent(jLabel43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(serviceListSelectionPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(142, Short.MAX_VALUE))
+        );
+        serviceServicesListLayout.setVerticalGroup(
+            serviceServicesListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceServicesListLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(serviceServicesListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(serviceServicesListLayout.createSequentialGroup()
+                        .addComponent(jLabel37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(serviceServicesListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(serviceListSearchInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(serviceListSearchButton))
+                        .addGap(18, 18, 18)
+                        .addGroup(serviceServicesListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel41)
+                            .addComponent(serviceListSelectionName))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(serviceServicesListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel43)
+                            .addComponent(serviceListSelectionPrice))))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        serviceTabs.addTab("Services List", serviceServicesList);
+
+        serviceListMemb.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        serviceListMemb.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        serviceListMemb.setRequestFocusEnabled(false);
+        serviceListMemb.setVerifyInputWhenFocusTarget(false);
+        serviceListMemb.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serviceListMembFocusGained(evt);
+            }
+        });
+        serviceListMemb.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                serviceListMembValueChanged(evt);
+            }
+        });
+        jScrollPane9.setViewportView(serviceListMemb);
+
+        jLabel44.setText("Name:");
+
+        jLabel45.setText("Discount:");
+
+        serviceListMembName.setText("None");
+
+        serviceListMembDiscount.setText("None");
+
+        serviceListMembInput.setText("(member tier)");
+        serviceListMembInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceListMembInputActionPerformed(evt);
+            }
+        });
+
+        serviceListMembSearchButton.setText("Search");
+        serviceListMembSearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serviceListMembSearchButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout serviceMemberTiersListLayout = new javax.swing.GroupLayout(serviceMemberTiersList);
+        serviceMemberTiersList.setLayout(serviceMemberTiersListLayout);
+        serviceMemberTiersListLayout.setHorizontalGroup(
+            serviceMemberTiersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceMemberTiersListLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(serviceMemberTiersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(serviceMemberTiersListLayout.createSequentialGroup()
+                        .addComponent(jLabel45)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(serviceListMembDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceMemberTiersListLayout.createSequentialGroup()
+                        .addComponent(serviceListMembInput, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(serviceListMembSearchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(serviceMemberTiersListLayout.createSequentialGroup()
+                        .addComponent(jLabel44)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(serviceListMembName, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(219, Short.MAX_VALUE))
+        );
+        serviceMemberTiersListLayout.setVerticalGroup(
+            serviceMemberTiersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(serviceMemberTiersListLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(serviceMemberTiersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(serviceMemberTiersListLayout.createSequentialGroup()
+                        .addGroup(serviceMemberTiersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(serviceListMembInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(serviceListMembSearchButton))
+                        .addGap(18, 18, 18)
+                        .addGroup(serviceMemberTiersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel44)
+                            .addComponent(serviceListMembName))
+                        .addGap(18, 18, 18)
+                        .addGroup(serviceMemberTiersListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel45)
+                            .addComponent(serviceListMembDiscount)))
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        serviceTabs.addTab("Member Tiers List", serviceMemberTiersList);
 
         javax.swing.GroupLayout servicesPanelLayout = new javax.swing.GroupLayout(servicesPanel);
         servicesPanel.setLayout(servicesPanelLayout);
@@ -925,79 +2166,268 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void serviceEnterNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceEnterNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_serviceEnterNumberActionPerformed
-
     private void jTabbedPane3HierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jTabbedPane3HierarchyChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_jTabbedPane3HierarchyChanged
 
-    private void serviceNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceNameActionPerformed
+    private void serviceDeleteMemberTierTabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDeleteMemberTierTabMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_serviceNameActionPerformed
+    }//GEN-LAST:event_serviceDeleteMemberTierTabMouseClicked
 
-    private void servicePriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicePriceActionPerformed
+    private void serviceDeleteMemberTierTabFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDeleteMemberTierTabFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_servicePriceActionPerformed
+    }//GEN-LAST:event_serviceDeleteMemberTierTabFocusGained
 
-    private void serviceCreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceCreateButtonActionPerformed
+    private void serviceDeleteMemberTierTabMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDeleteMemberTierTabMouseMoved
         // TODO add your handling code here:
-            String name = serviceName.getText();
-            Double price = Double.parseDouble(servicePrice.getText());
-            String description = serviceDescription.getText();
-           
-        m.createServiceGUI(name,description,price);
-        m.printListService();
-        serviceName.setText("");
-        servicePrice.setText("");
-        serviceDescription.setText("");
-    }//GEN-LAST:event_serviceCreateButtonActionPerformed
+    }//GEN-LAST:event_serviceDeleteMemberTierTabMouseMoved
 
-    private void serviceModifiedPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifiedPriceActionPerformed
+    private void serviceDeleteMembDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceDeleteMembDeleteButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_serviceModifiedPriceActionPerformed
+        String name = serviceDeleteMembName.getText();
 
-    private void serviceModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifyButtonActionPerformed
+        m.removeMembershipGUI(name);
+
+        serviceDeleteLastMembershipDeleted.setText(name);
+
+        serviceDeleteMembSelection.setText("");
+        serviceDeleteMembName.setText("");
+        serviceDeleteMembDiscount.setText("");
+        serviceDeleteMembVerifyName.setText("");
+
+        String[] keyArray = m.memberships.keySet().toArray(new String[m.memberships.size()]);
+        serviceDropDownMemberDelete.setModel(new DefaultComboBoxModel<>(keyArray));
+    }//GEN-LAST:event_serviceDeleteMembDeleteButtonActionPerformed
+
+    private void serviceDeleteMembSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceDeleteMembSelectActionPerformed
         // TODO add your handling code here:
-        String oldName = serviceModifySelectionName.getText();
-        String newName = serviceModifiedName.getText();
-        String newDesc = serviceModifiedDescription.getText();
-        double newPrice = Integer.valueOf(serviceModifiedPrice.getText());
-        
-        m.removeServiceGUI(oldName);
-        m.createServiceGUI(newName, newDesc,newPrice);
-        
-        lastServiceModified.setText(newName);
-        serviceModifySelectionName.setText("");
-        serviceModifiedName.setText("");
-        serviceModifiedDescription.setText("");
-        serviceModifiedPrice.setText("");
-        serviceModifySelectionDescription.setText("");
-        serviceModifySelectionPrice.setText("");
-        
+
+        serviceDeleteMembSelection.setText(serviceDropDownMemberDelete.getSelectedItem().toString());
+        serviceDeleteMembName.setText(m.memberships.get(serviceDeleteMembSelection.getText()).getTierName());
+        serviceDeleteMembDiscount.setText(String.valueOf(m.memberships.get(serviceDeleteMembSelection.getText()).getDiscount()*100)+ "%");
+        serviceDeleteMembVerifyName.setText(serviceDeleteMembSelection.getText() + "?");
+    }//GEN-LAST:event_serviceDeleteMembSelectActionPerformed
+
+    private void serviceDeleteMembSelectFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDeleteMembSelectFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDeleteMembSelectFocusGained
+
+    private void serviceDropDownMemberDeletePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_serviceDropDownMemberDeletePropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberDeletePropertyChange
+
+    private void serviceDropDownMemberDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceDropDownMemberDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberDeleteActionPerformed
+
+    private void serviceDropDownMemberDeleteInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_serviceDropDownMemberDeleteInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberDeleteInputMethodTextChanged
+
+    private void serviceDropDownMemberDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDropDownMemberDeleteMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberDeleteMouseClicked
+
+    private void serviceDropDownMemberDeleteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDropDownMemberDeleteFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberDeleteFocusLost
+
+    private void serviceDropDownMemberDeleteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDropDownMemberDeleteFocusGained
+        // TODO add your handling code here:
+        String[] keyArray = m.memberships.keySet().toArray(new String[m.memberships.size()]);
+        serviceDropDownMemberDelete.setModel(new DefaultComboBoxModel<>(keyArray));
+    }//GEN-LAST:event_serviceDropDownMemberDeleteFocusGained
+
+    private void serviceModifyMembChangedNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifyMembChangedNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceModifyMembChangedNameActionPerformed
+
+    private void serviceModifyMemberTierSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifyMemberTierSelectActionPerformed
+        // TODO add your handling code here:
+        serviceModifyMembSelection.setText(serviceDropDownMemberModify.getSelectedItem().toString());
+        serviceModifyMembNameLabel.setText(m.memberships.get(serviceDropDownMemberModify.getSelectedItem().toString()).getTierName());
+        serviceModifyMembDiscountLabel.setText(String.valueOf(m.memberships.get(serviceDropDownMemberModify.getSelectedItem().toString()).getDiscount()*100 + "%"));
+    }//GEN-LAST:event_serviceModifyMemberTierSelectActionPerformed
+
+    private void serviceDropDownMemberModifyPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_serviceDropDownMemberModifyPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberModifyPropertyChange
+
+    private void serviceDropDownMemberModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceDropDownMemberModifyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberModifyActionPerformed
+
+    private void serviceDropDownMemberModifyInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_serviceDropDownMemberModifyInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberModifyInputMethodTextChanged
+
+    private void serviceDropDownMemberModifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDropDownMemberModifyMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberModifyMouseClicked
+
+    private void serviceDropDownMemberModifyFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDropDownMemberModifyFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberModifyFocusLost
+
+    private void serviceDropDownMemberModifyFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDropDownMemberModifyFocusGained
+        // TODO add your handling code here:
+        String[] keyArray = m.memberships.keySet().toArray(new String[m.memberships.size()]);
+        serviceDropDownMemberModify.setModel(new DefaultComboBoxModel<>(keyArray));
+    }//GEN-LAST:event_serviceDropDownMemberModifyFocusGained
+
+    private void serviceDropDownMemberModifyItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_serviceDropDownMemberModifyItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownMemberModifyItemStateChanged
+
+    private void serviceModifyMembButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifyMembButtonActionPerformed
+        // TODO add your handling code here:
+        String newName = serviceModifyMembChangedName.getText();
+        String oldName = serviceModifyMembNameLabel.getText();
+        double discount = Double.valueOf(serviceModifyMembChangedDiscount.getText());
+
+        m.memberships.remove(oldName);
+        m.createMembershipGUI(newName, discount);
+
+        lastMembershipModifiedLable.setText(newName);
+
+        serviceModifyMembChangedName.setText("");
+        serviceModifyMembNameLabel.setText("");
+        serviceModifyMembChangedDiscount.setText("");
+        serviceModifyMembDiscountLabel.setText("");
+        serviceModifyMembNameLabel.setText("");
+        serviceModifyMembSelection.setText("");
+
+        String[] keyArray = m.memberships.keySet().toArray(new String[m.memberships.size()]);
+        serviceDropDownMemberModify.setModel(new DefaultComboBoxModel<>(keyArray));
+    }//GEN-LAST:event_serviceModifyMembButtonActionPerformed
+
+    private void serviceModifyMembChangedDiscountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifyMembChangedDiscountActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceModifyMembChangedDiscountActionPerformed
+
+    private void serviceCreateMemberTierTabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceCreateMemberTierTabMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceCreateMemberTierTabMouseClicked
+
+    private void serviceCreateMemberTierTabFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceCreateMemberTierTabFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceCreateMemberTierTabFocusGained
+
+    private void serviceCreateMemberTierTabMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceCreateMemberTierTabMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceCreateMemberTierTabMouseMoved
+
+    private void serviceCreateMembCreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceCreateMembCreateButtonActionPerformed
+        // TODO add your handling code here:
+        String name = serviceCreateMembName.getText();
+        double discount = Double.valueOf(serviceCreateMembDiscount.getText());
+
+        m.createMembershipGUI(name,discount);
+
+        serviceCreateMembName.setText("");
+        serviceCreateMembDiscount.setText("");
+    }//GEN-LAST:event_serviceCreateMembCreateButtonActionPerformed
+
+    private void serviceCreateMembNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceCreateMembNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceCreateMembNameActionPerformed
+
+    private void serviceDeleteTabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDeleteTabMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDeleteTabMouseClicked
+
+    private void serviceDeleteTabFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDeleteTabFocusGained
+        // TODO add your handling code here
+    }//GEN-LAST:event_serviceDeleteTabFocusGained
+
+    private void serviceDeleteTabMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDeleteTabMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDeleteTabMouseMoved
+
+    private void serviceDeleteDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceDeleteDeleteButtonActionPerformed
+        // TODO add your handling code here:
+        String name = serviceDeleteNameLabel.getText();
+
+        m.removeServiceGUI(name);
+
         String[] keyArray = m.services.keySet().toArray(new String[m.services.size()]);
-        serviceDropDown.setModel(new DefaultComboBoxModel<>(keyArray));
-        
-        
-    }//GEN-LAST:event_serviceModifyButtonActionPerformed
+        serviceDropDown1.setModel(new DefaultComboBoxModel<>(keyArray));
+
+        serviceDeleteLastServiceDeleted.setText(name);
+    }//GEN-LAST:event_serviceDeleteDeleteButtonActionPerformed
+
+    private void serviceDeleteSelectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceDeleteSelectButtonActionPerformed
+        // TODO add your handling code here:
+        serviceDeleteSelectionLabel.setText(serviceDropDown1.getSelectedItem().toString());
+        serviceDeleteNameLabel.setText(m.services.get(serviceDropDown1.getSelectedItem().toString()).getServiceName());
+        serviceDeleteDescriptionLabel.setText(m.services.get(serviceDropDown1.getSelectedItem().toString()).getDescription());
+
+        serviceDeletePriceLabel.setText("$" + String.valueOf(m.services.get(serviceDropDown1.getSelectedItem().toString()).getPrice()));
+        serviceDeleteVerifyNameLabel.setText(serviceDeleteSelectionLabel.getText() + "?");
+    }//GEN-LAST:event_serviceDeleteSelectButtonActionPerformed
+
+    private void serviceDeleteSelectButtonFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDeleteSelectButtonFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDeleteSelectButtonFocusGained
+
+    private void serviceDropDown1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_serviceDropDown1PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDown1PropertyChange
+
+    private void serviceDropDown1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceDropDown1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDown1ActionPerformed
+
+    private void serviceDropDown1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_serviceDropDown1InputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDown1InputMethodTextChanged
+
+    private void serviceDropDown1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDropDown1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDown1MouseClicked
+
+    private void serviceDropDown1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDropDown1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDown1FocusLost
+
+    private void serviceDropDown1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDropDown1FocusGained
+        // TODO add your handling code here:
+        String[] keyArray = m.services.keySet().toArray(new String[m.services.size()]);
+        serviceDropDown1.setModel(new DefaultComboBoxModel<>(keyArray));
+    }//GEN-LAST:event_serviceDropDown1FocusGained
+
+    private void serviceModifiedNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifiedNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceModifiedNameActionPerformed
+
+    private void serviceSelectModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceSelectModifyActionPerformed
+        // TODO add your handling code here:
+        serviceModifySelectionLabel.setText(serviceDropDown.getSelectedItem().toString());
+        serviceModifySelectionName.setText(m.services.get(serviceDropDown.getSelectedItem().toString()).getServiceName());
+        serviceModifySelectionDescription.setText(m.services.get(serviceDropDown.getSelectedItem().toString()).getDescription());
+
+        serviceModifySelectionPrice.setText("$" + String.valueOf(m.services.get(serviceDropDown.getSelectedItem().toString()).getPrice()));
+    }//GEN-LAST:event_serviceSelectModifyActionPerformed
+
+    private void serviceDropDownPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_serviceDropDownPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownPropertyChange
 
     private void serviceDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceDropDownActionPerformed
-         
+
     }//GEN-LAST:event_serviceDropDownActionPerformed
 
     private void serviceDropDownInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_serviceDropDownInputMethodTextChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_serviceDropDownInputMethodTextChanged
 
-    private void serviceDropDownPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_serviceDropDownPropertyChange
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_serviceDropDownPropertyChange
-
     private void serviceDropDownMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDropDownMouseClicked
-       
+
     }//GEN-LAST:event_serviceDropDownMouseClicked
+
+    private void serviceDropDownFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDropDownFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDropDownFocusLost
 
     private void serviceDropDownFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDropDownFocusGained
         // TODO add your handling code here:
@@ -1005,20 +2435,280 @@ public class NewJFrame extends javax.swing.JFrame {
         serviceDropDown.setModel(new DefaultComboBoxModel<>(keyArray));
     }//GEN-LAST:event_serviceDropDownFocusGained
 
-    private void serviceSelectModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceSelectModifyActionPerformed
+    private void serviceDropDownItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_serviceDropDownItemStateChanged
         // TODO add your handling code here:
-        serviceModifySelectionLabel.setText(serviceDropDown.getSelectedItem().toString()); 
-        serviceModifySelectionName.setText(m.services.get(serviceDropDown.getSelectedItem().toString()).getServiceName());
-        serviceModifySelectionDescription.setText(m.services.get(serviceDropDown.getSelectedItem().toString()).getDescription());
+    }//GEN-LAST:event_serviceDropDownItemStateChanged
+
+    private void serviceModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifyButtonActionPerformed
+        // TODO add your handling code here:
+        String oldName = serviceModifySelectionName.getText();
+        String newName = serviceModifiedName.getText();
+        String newDesc = serviceModifiedDescription.getText();
+        double newPrice = Integer.valueOf(serviceModifiedPrice.getText());
+
+        m.removeServiceGUI(oldName);
+        m.createServiceGUI(newName, newDesc,newPrice);
+
+        lastServiceModified.setText(newName);
+        serviceModifySelectionName.setText("");
+        serviceModifiedName.setText("");
+        serviceModifiedDescription.setText("");
+        serviceModifiedPrice.setText("");
+        serviceModifySelectionDescription.setText("");
+        serviceModifySelectionPrice.setText("");
+        serviceModifySelectionLabel.setText("");
+
+        String[] keyArray = m.services.keySet().toArray(new String[m.services.size()]);
+        serviceDropDown.setModel(new DefaultComboBoxModel<>(keyArray));
+    }//GEN-LAST:event_serviceModifyButtonActionPerformed
+
+    private void serviceModifiedPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifiedPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceModifiedPriceActionPerformed
+
+    private void serviceCreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceCreateButtonActionPerformed
+        // TODO add your handling code here:
+        String name = serviceName.getText();
+        Double price = Double.parseDouble(servicePrice.getText());
+        String description = serviceDescription.getText();
+
+        m.createServiceGUI(name,description,price);
+        m.printListService();
+        serviceName.setText("");
+        servicePrice.setText("");
+        serviceDescription.setText("");
+    }//GEN-LAST:event_serviceCreateButtonActionPerformed
+
+    private void servicePriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicePriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_servicePriceActionPerformed
+
+    private void serviceNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceNameActionPerformed
+
+    private void serviceListFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceListFocusGained
+        // TODO add your handling code here
+        String[] keyArray = m.services.keySet().toArray(new String[m.services.size()]);
+        serviceList.setModel(new DefaultComboBoxModel<>(keyArray)); 
+        serviceList.setSelectionMode(SINGLE_SELECTION);
+    }//GEN-LAST:event_serviceListFocusGained
+
+    private void serviceListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_serviceListValueChanged
+        // TODO add your handling code here:
         
-        serviceModifySelectionPrice.setText("$" + String.valueOf(m.services.get(serviceDropDown.getSelectedItem().toString()).getPrice()));
+        
+        
+        
+        serviceListSelectionName.setText(serviceList.getSelectedValue());
+        servicesListSelectionDescription.setText(m.services.get(serviceList.getSelectedValue()).getDescription());
+        serviceListSelectionPrice.setText("$" + String.valueOf(m.services.get(serviceList.getSelectedValue()).getPrice()));
+    }//GEN-LAST:event_serviceListValueChanged
 
-
-    }//GEN-LAST:event_serviceSelectModifyActionPerformed
-
-    private void serviceModifiedNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceModifiedNameActionPerformed
+    private void serviceListMembFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceListMembFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_serviceModifiedNameActionPerformed
+        String[] keyArray = m.memberships.keySet().toArray(new String[m.memberships.size()]);
+        serviceListMemb.setModel(new DefaultComboBoxModel<>(keyArray)); 
+        serviceListMemb.setSelectionMode(SINGLE_SELECTION);
+    }//GEN-LAST:event_serviceListMembFocusGained
+
+    private void serviceListSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceListSearchButtonActionPerformed
+        // TODO add your handling code here:
+        try{
+        String input = serviceListSearchInput.getText();
+        serviceListSelectionName.setText(input);
+        servicesListSelectionDescription.setText(m.services.get(input).getDescription());
+        serviceListSelectionPrice.setText("$" + String.valueOf(m.services.get(input).getPrice()));
+        }
+        catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null,"You entered an invalid option. Please Try Again.","Error",JOptionPane.WARNING_MESSAGE);
+            serviceListSelectionName.setText("");
+            servicesListSelectionDescription.setText("");
+            serviceListSelectionPrice.setText("");
+        }
+        
+        
+        
+    }//GEN-LAST:event_serviceListSearchButtonActionPerformed
+
+    private void serviceListMembSearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceListMembSearchButtonActionPerformed
+        // TODO add your handling code here:
+        try{
+        String input = serviceListMembInput.getText();
+        serviceListMembName.setText(input);
+        serviceListMembDiscount.setText(String.valueOf(m.memberships.get(input).getDiscount()*100 + "%"));
+        }
+        catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null,"You entered an invalid option. Please Try Again.","Error",JOptionPane.WARNING_MESSAGE);
+            serviceListMembName.setText("");
+            serviceListMembDiscount.setText("");
+        }
+    }//GEN-LAST:event_serviceListMembSearchButtonActionPerformed
+
+    private void serviceListMembInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serviceListMembInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceListMembInputActionPerformed
+
+    private void serviceListMembValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_serviceListMembValueChanged
+        // TODO add your handling code here:
+        serviceListMembName.setText(serviceListMemb.getSelectedValue());
+        
+        serviceListMembDiscount.setText(String.valueOf(m.memberships.get(serviceListMemb.getSelectedValue()).getDiscount()*100 + "%"));
+        serviceListMembInput.setText("");
+        
+    }//GEN-LAST:event_serviceListMembValueChanged
+
+    private void clientCreateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientCreateButtonActionPerformed
+        // TODO add your handling code here:
+        String name = clientCreateName.getText();
+        String pn = clientCreatePN.getText();
+        String email = clientCreateEmail.getText();
+
+        m.clients.put(name, new Client(name,pn,email));
+
+        clientCreateName.setText("");
+        clientCreatePN.setText("");
+        clientCreateEmail.setText("");
+
+        System.out.println(m.clients.get(name).getName());
+        System.out.println(m.clients.get(name).getPhoneNumber());
+        System.out.println(m.clients.get(name).getEmail());
+    }//GEN-LAST:event_clientCreateButtonActionPerformed
+
+    private void clientCreateEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientCreateEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientCreateEmailActionPerformed
+
+    private void clientCreateNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientCreateNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientCreateNameActionPerformed
+
+    private void clientsModifyChangedPNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsModifyChangedPNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsModifyChangedPNActionPerformed
+
+    private void clientsModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsModifyButtonActionPerformed
+        // TODO add your handling code here:
+        String newName = clientsModifyChangedName.getText();
+        String oldName = clientsModifySelectionName.getText();
+        String PN = clientsModifyChangedPN.getText();
+        String Email = clientsModifyChangedEmail.getText();
+        
+        m.clients.remove(oldName);
+        m.clients.put(newName,new Client(newName,PN,Email));
+        
+        clientsModifyChangedName.setText("");
+        clientsModifyChangedPN.setText("");
+        clientsModifyChangedEmail.setText("");
+        clientsModifySelectionName.setText("");
+        clientsModifySelectionPN.setText("");
+        clientsModifySelectionEmail.setText("");
+        clientsModifySelection.setText("");
+        
+        lastClientModified.setText(newName);
+        
+        String[] keyArray = m.clients.keySet().toArray(new String[m.clients.size()]);
+        clientsModifyDropDown.setModel(new DefaultComboBoxModel<>(keyArray)); 
+         
+    }//GEN-LAST:event_clientsModifyButtonActionPerformed
+
+    private void clientsModifyDropDownItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_clientsModifyDropDownItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsModifyDropDownItemStateChanged
+
+    private void clientsModifyDropDownFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_clientsModifyDropDownFocusGained
+        // TODO add your handling code here:
+        String[] keyArray = m.clients.keySet().toArray(new String[m.clients.size()]);
+        clientsModifyDropDown.setModel(new DefaultComboBoxModel<>(keyArray)); 
+        
+    }//GEN-LAST:event_clientsModifyDropDownFocusGained
+
+    private void clientsModifyDropDownFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_clientsModifyDropDownFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsModifyDropDownFocusLost
+
+    private void clientsModifyDropDownMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientsModifyDropDownMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsModifyDropDownMouseClicked
+
+    private void clientsModifyDropDownInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_clientsModifyDropDownInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsModifyDropDownInputMethodTextChanged
+
+    private void clientsModifyDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsModifyDropDownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsModifyDropDownActionPerformed
+
+    private void clientsModifyDropDownPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_clientsModifyDropDownPropertyChange
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_clientsModifyDropDownPropertyChange
+
+    private void clientsModifySelectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsModifySelectButtonActionPerformed
+        // TODO add your handling code here:
+        clientsModifySelection.setText(clientsModifyDropDown.getSelectedItem().toString());
+        String name = clientsModifySelection.getText();
+        clientsModifySelectionName.setText(name);
+        clientsModifySelectionPN.setText(m.clients.get(name).getPhoneNumber());
+        clientsModifySelectionEmail.setText(m.clients.get(name).getEmail());
+        
+    }//GEN-LAST:event_clientsModifySelectButtonActionPerformed
+
+    private void clientsModifyChangedNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsModifyChangedNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsModifyChangedNameActionPerformed
+
+    private void clientsModifyChangedEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsModifyChangedEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsModifyChangedEmailActionPerformed
+
+    private void clientsDeleteDropDownFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_clientsDeleteDropDownFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsDeleteDropDownFocusGained
+
+    private void clientsDeleteDropDownFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_clientsDeleteDropDownFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsDeleteDropDownFocusLost
+
+    private void clientsDeleteDropDownMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientsDeleteDropDownMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsDeleteDropDownMouseClicked
+
+    private void clientsDeleteDropDownInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_clientsDeleteDropDownInputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsDeleteDropDownInputMethodTextChanged
+
+    private void clientsDeleteDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsDeleteDropDownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsDeleteDropDownActionPerformed
+
+    private void clientsDeleteDropDownPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_clientsDeleteDropDownPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsDeleteDropDownPropertyChange
+
+    private void clientsDeleteSelectButtonFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_clientsDeleteSelectButtonFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsDeleteSelectButtonFocusGained
+
+    private void clientsDeleteSelectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsDeleteSelectButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsDeleteSelectButtonActionPerformed
+
+    private void clientsDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsDeleteButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clientsDeleteButtonActionPerformed
+
+    private void serviceDeleteTab1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDeleteTab1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDeleteTab1MouseMoved
+
+    private void serviceDeleteTab1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serviceDeleteTab1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDeleteTab1FocusGained
+
+    private void serviceDeleteTab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDeleteTab1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serviceDeleteTab1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1064,11 +2754,35 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel appointmentLabel;
     private javax.swing.JPanel appointmentPanel;
     private javax.swing.JTabbedPane appointmentTabs;
+    private javax.swing.JButton clientCreateButton;
+    private javax.swing.JTextField clientCreateEmail;
+    private javax.swing.JTextField clientCreateName;
+    private javax.swing.JTextField clientCreatePN;
     private javax.swing.JButton clientsButton;
+    private javax.swing.JPanel clientsCreateTab;
+    private javax.swing.JButton clientsDeleteButton;
+    private javax.swing.JComboBox<String> clientsDeleteDropDown;
+    private javax.swing.JLabel clientsDeleteEmail;
+    private javax.swing.JLabel clientsDeleteName;
+    private javax.swing.JLabel clientsDeletePN;
+    private javax.swing.JButton clientsDeleteSelectButton;
+    private javax.swing.JLabel clientsDeleteSelection;
+    private javax.swing.JTabbedPane clientsDeleteTab;
+    private javax.swing.JLabel clientsDeleteVerifyName;
+    private javax.swing.JButton clientsModifyButton;
+    private javax.swing.JTextField clientsModifyChangedEmail;
+    private javax.swing.JTextField clientsModifyChangedName;
+    private javax.swing.JTextField clientsModifyChangedPN;
+    private javax.swing.JComboBox<String> clientsModifyDropDown;
+    private javax.swing.JButton clientsModifySelectButton;
+    private javax.swing.JLabel clientsModifySelection;
+    private javax.swing.JLabel clientsModifySelectionEmail;
+    private javax.swing.JLabel clientsModifySelectionName;
+    private javax.swing.JLabel clientsModifySelectionPN;
+    private javax.swing.JPanel clientsModifyTab;
     private javax.swing.JPanel clientsPanel;
     private javax.swing.JButton employeesButton;
     private javax.swing.JPanel employeesPanel;
-    private javax.swing.JLabel invalidOption;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
@@ -1080,16 +2794,62 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList2;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1099,47 +2859,82 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JTabbedPane jTabbedPane12;
     private javax.swing.JTabbedPane jTabbedPane16;
-    private javax.swing.JTabbedPane jTabbedPane17;
     private javax.swing.JTabbedPane jTabbedPane18;
     private javax.swing.JTabbedPane jTabbedPane19;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane20;
     private javax.swing.JTabbedPane jTabbedPane21;
-    private javax.swing.JTabbedPane jTabbedPane22;
-    private javax.swing.JTabbedPane jTabbedPane23;
-    private javax.swing.JTabbedPane jTabbedPane24;
-    private javax.swing.JTabbedPane jTabbedPane25;
-    private javax.swing.JTabbedPane jTabbedPane26;
-    private javax.swing.JTabbedPane jTabbedPane27;
-    private javax.swing.JTabbedPane jTabbedPane28;
-    private javax.swing.JTabbedPane jTabbedPane29;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lastClientModified;
+    private javax.swing.JLabel lastDeletedClient;
+    private javax.swing.JLabel lastMembershipModifiedLable;
     private javax.swing.JLabel lastServiceModified;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel mainTitleLabel;
     private javax.swing.JPanel rightCardPanel;
     private javax.swing.JButton salesButton;
     private javax.swing.JPanel salesPanel;
-    private javax.swing.JLabel selectOption;
-    private javax.swing.JLabel serviceChoice;
     private javax.swing.JButton serviceCreateButton;
+    private javax.swing.JButton serviceCreateMembCreateButton;
+    private javax.swing.JTextField serviceCreateMembDiscount;
+    private javax.swing.JTextField serviceCreateMembName;
+    private javax.swing.JPanel serviceCreateMemberTierTab;
     private javax.swing.JPanel serviceCreateTab;
+    private javax.swing.JButton serviceDeleteDeleteButton;
+    private javax.swing.JTextArea serviceDeleteDescriptionLabel;
+    private javax.swing.JLabel serviceDeleteLastMembershipDeleted;
+    private javax.swing.JLabel serviceDeleteLastServiceDeleted;
+    private javax.swing.JButton serviceDeleteMembDeleteButton;
+    private javax.swing.JLabel serviceDeleteMembDiscount;
+    private javax.swing.JLabel serviceDeleteMembName;
+    private javax.swing.JButton serviceDeleteMembSelect;
+    private javax.swing.JLabel serviceDeleteMembSelection;
+    private javax.swing.JLabel serviceDeleteMembVerifyName;
+    private javax.swing.JPanel serviceDeleteMemberTierTab;
+    private javax.swing.JLabel serviceDeleteNameLabel;
+    private javax.swing.JLabel serviceDeletePriceLabel;
+    private javax.swing.JButton serviceDeleteSelectButton;
+    private javax.swing.JLabel serviceDeleteSelectionLabel;
+    private javax.swing.JPanel serviceDeleteTab;
+    private javax.swing.JPanel serviceDeleteTab1;
+    private javax.swing.JLabel serviceDeleteVerifyNameLabel;
     private javax.swing.JTextArea serviceDescription;
     private javax.swing.JComboBox<String> serviceDropDown;
-    private java.awt.TextField serviceEnterNumber;
-    private javax.swing.JList<String> serviceListOptions;
-    private javax.swing.JPanel serviceMainTab;
-    private javax.swing.JLabel serviceMessage;
+    private javax.swing.JComboBox<String> serviceDropDown1;
+    private javax.swing.JComboBox<String> serviceDropDownMemberDelete;
+    private javax.swing.JComboBox<String> serviceDropDownMemberModify;
+    private javax.swing.JList<String> serviceList;
+    private javax.swing.JList<String> serviceListMemb;
+    private javax.swing.JLabel serviceListMembDiscount;
+    private javax.swing.JTextField serviceListMembInput;
+    private javax.swing.JLabel serviceListMembName;
+    private javax.swing.JButton serviceListMembSearchButton;
+    private javax.swing.JButton serviceListSearchButton;
+    private javax.swing.JTextField serviceListSearchInput;
+    private javax.swing.JLabel serviceListSelectionName;
+    private javax.swing.JLabel serviceListSelectionPrice;
+    private javax.swing.JPanel serviceMemberTiersList;
     private javax.swing.JTextArea serviceModifiedDescription;
     private javax.swing.JTextField serviceModifiedName;
     private javax.swing.JTextField serviceModifiedPrice;
     private javax.swing.JButton serviceModifyButton;
+    private javax.swing.JButton serviceModifyMembButton;
+    private javax.swing.JTextField serviceModifyMembChangedDiscount;
+    private javax.swing.JTextField serviceModifyMembChangedName;
+    private javax.swing.JLabel serviceModifyMembDiscountLabel;
+    private javax.swing.JLabel serviceModifyMembNameLabel;
+    private javax.swing.JLabel serviceModifyMembSelection;
+    private javax.swing.JButton serviceModifyMemberTierSelect;
+    private javax.swing.JPanel serviceModifyMemberTierTab;
     private javax.swing.JTextArea serviceModifySelectionDescription;
     private javax.swing.JLabel serviceModifySelectionLabel;
     private javax.swing.JLabel serviceModifySelectionName;
@@ -1148,8 +2943,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField serviceName;
     private javax.swing.JTextField servicePrice;
     private javax.swing.JButton serviceSelectModify;
+    private javax.swing.JPanel serviceServicesList;
     private javax.swing.JTabbedPane serviceTabs;
     private javax.swing.JButton servicesButton;
+    private javax.swing.JTextArea servicesListSelectionDescription;
     private javax.swing.JPanel servicesPanel;
     // End of variables declaration//GEN-END:variables
 }
