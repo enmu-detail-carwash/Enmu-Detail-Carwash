@@ -27,13 +27,13 @@ public class NewJFrame extends javax.swing.JFrame {
     public static Management m = new Management();
     
             
-     public static final String clientFilename = "clients.csv";
-     public static final String carsFilename = "cars.csv";
-     public static final String appFilename = "appointments.csv";
-     public static final String empFilename = "employees.csv";
-     public static final String salesFilename = "sales.csv";
-     public static final String serviceFilename = "services.csv";
-     public static final String specialClientsFileName = "services.csv";
+     public static final String clientFilename = "C:\\Users\\david\\OneDrive\\Documents\\NetBeansProjects\\Enmu-Detail-Carwash\\Project Stage 4\\sourceFiles\\dataFiles\\clients.csv";
+     public static final String carsFilename = "C:\\Users\\david\\OneDrive\\Documents\\NetBeansProjects\\Enmu-Detail-Carwash\\Project Stage 4\\sourceFiles\\dataFiles\\cars.csv";
+     public static final String appFilename = "C:\\Users\\david\\OneDrive\\Documents\\NetBeansProjects\\Enmu-Detail-Carwash\\Project Stage 4\\sourceFiles\\dataFiles\\appointments.csv";
+     public static final String empFilename = "C:\\Users\\david\\OneDrive\\Documents\\NetBeansProjects\\Enmu-Detail-Carwash\\Project Stage 4\\sourceFiles\\dataFiles\\employees.csv";
+     public static final String salesFilename = "C:\\Users\\david\\OneDrive\\Documents\\NetBeansProjects\\Enmu-Detail-Carwash\\Project Stage 4\\sourceFiles\\dataFiles\\sales.csv";
+     public static final String serviceFilename = "C:\\Users\\david\\OneDrive\\Documents\\NetBeansProjects\\Enmu-Detail-Carwash\\Project Stage 4\\sourceFiles\\dataFiles\\services.csv";
+     public static final String specialClientsFileName = "C:\\Users\\david\\OneDrive\\Documents\\NetBeansProjects\\Enmu-Detail-Carwash\\Project Stage 4\\sourceFiles\\dataFiles\\services.csv";
      
      
      
@@ -6146,6 +6146,40 @@ public class NewJFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error reading the file");
         }
     }
+    private void readCLientCSV()
+    {
+        try
+        {
+            File file = new File(clientFilename);
+            FileReader fr = new FileReader(clientFilename);
+            BufferedReader br = new BufferedReader(fr);
+            
+            String line = "";
+            String[] tempArr;
+            while ( (line = br.readLine()) != null)
+            {
+                tempArr = line.split(delimiter);
+                for (String field : tempArr)
+                {
+                    System.out.println(field + " ");
+                }
+                
+                String name = tempArr[0];
+                String pn = tempArr[1];
+                String email = tempArr[2];
+                
+                
+                m.clients.put(name, new Client(name,pn,email));
+                
+                System.out.println();
+            }
+            br.close();
+        }
+        catch(IOException e)
+        {
+            JOptionPane.showMessageDialog(this, "Error reading the file");
+        }
+    }
         private void updateClientCSV(){
     
         try
@@ -6226,6 +6260,7 @@ public class NewJFrame extends javax.swing.JFrame {
             public void run() {
                 new NewJFrame().setVisible(true);
                 m.createDummyInfo();
+                
             }
         });
     }
