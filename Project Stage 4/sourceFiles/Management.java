@@ -403,6 +403,10 @@ public class Management {
         Appointments.put(dateInput + clientInput, new Appointment(services.get(serviceInput),clients.get(clientInput),employees.get(empInput),timeInput,dateInput));
         input.nextLine();
     }
+    public void createAPPGUI(String clientInput, String dateInput,String timeInput,String serviceInput,String empInput){
+        Appointments.put(dateInput + clientInput, new Appointment(services.get(serviceInput),clients.get(clientInput),employees.get(empInput),timeInput,dateInput));
+        input.nextLine();
+    }
 
     public void deleteAppointment(){
 
@@ -629,6 +633,13 @@ public class Management {
 
 
     }
+    public void createSaleGUI(String saleID, String clientInput, String serviceInput, int productAmountInput){
+        
+         sales.put(clientInput + saleID, new Sale(clients.get(clientInput).getName(),services.get(serviceInput).getServiceName(),
+                services.get(serviceInput).getPrice(),
+                productAmountInput, clients.get(clientInput).getDiscountAmount(),saleID));
+           services.get(serviceInput).addSale(productAmountInput);
+    }
 
     public void deleteSale(){
         printAllSales();
@@ -704,6 +715,8 @@ public class Management {
     public void removeMembershipGUI(String n){
         memberships.remove(n);
     }
+    
+    
     
 
 
