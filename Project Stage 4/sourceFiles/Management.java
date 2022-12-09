@@ -48,7 +48,7 @@ public class Management {
         sales.put("Mary Johnson2",new Sale(clients.get("Mary Johnson").getName(),services.get("Interior Clean").getServiceName(),services.get("Interior Clean").getPrice(),1,clients.get("Mary Johnson").getDiscountAmount(),"2"));
         clients.put("David Schmith", new Client("David Schmith","5756077475","davidschmith@gmail.com"));
         services.get("Exterior Wash").addSale(1);
-        services.get("Interior Wash").addSale(1);
+       services.get("Interior Clean").addSale(1);
 
     }
 
