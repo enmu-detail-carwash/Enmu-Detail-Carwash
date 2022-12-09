@@ -687,6 +687,24 @@ public class Management {
         services.remove(n);
     }
     
+    public void createMembershipGUI(String n, Double d){
+        memberships.put(n, new Membership(n,d));
+    }
+    public void modifyMembershipGUI(String n,String nn, double d){
+        
+        String name = n;
+        String newName = nn;
+        double discount = d;
+        
+        memberships.remove(n);
+        
+        memberships.put(nn,new Membership(nn,d));
+    }
+    
+    public void removeMembershipGUI(String n){
+        memberships.remove(n);
+    }
+    
 
 
 
