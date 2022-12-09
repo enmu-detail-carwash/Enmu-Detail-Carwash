@@ -13,6 +13,9 @@ import javax.swing.JOptionPane;
 import static javax.swing.ListSelectionModel.SINGLE_SELECTION;
 import javax.swing.table.DefaultTableModel;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -22,6 +25,8 @@ import java.util.TreeMap;
  */
 public class NewJFrame extends javax.swing.JFrame {
     public static Management m = new Management();
+    
+            
      public static final String clientFilename = "clients.csv";
      public static final String carsFilename = "cars.csv";
      public static final String appFilename = "appointments.csv";
@@ -6147,25 +6152,28 @@ public class NewJFrame extends javax.swing.JFrame {
         {
             
             // Make a copy of the original fike
-            
+            File oldFile = new File(clientFilename);
+            File new_file = new File(clientFilename+".bkp");
 //            File oldFile = new File(filename);
 //            File new_file = new File(filename+".bkp");
 //            
 //            Files.copy(oldFile.toPath(), new_file.toPath());
+               
+            Files.copy(oldFile.toPath(),new_file.toPath());
                     
             File file = new File(clientFilename);
-            BufferedWriter bf = new BufferedWriter(new FileWriter(file));
+            BufferedWriter bf = new BufferedWriter(new FileWriter(clientFilename));
 
             // Traverese the map of customers and ovewrite the file.
-            Map<String,Client> clientMap = m.clients;
-            for (String key : clientMap.keySet())
+            
+            for (String key : m.clients.keySet())
             {
                 String row = "";
                 
 
-                String name = clientMap.get(key).getName();
-                String pn = clientMap.get(key).getPhoneNumber();
-                String email = clientMap.get(key).getEmail();
+                String name = m.clients.get(key).getName();
+                String pn = m.clients.get(key).getPhoneNumber();
+                String email = m.clients.get(key).getEmail();
 
                 row = String.valueOf(name) + "," + pn + "," +
                         email + "," + "\n";
